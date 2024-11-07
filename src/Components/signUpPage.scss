@@ -1,0 +1,133 @@
+
+.signUp {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    width: 100;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    &__form {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      height: 500px;
+    }
+    &__wrapper {
+      display: flex;
+      width: 450px;
+      height: 600px;
+      background-color: rgba(182, 178, 178, 0.1);
+      border: 1px solid rgba(182, 178, 178, 0.1);
+      border-radius: 5px;
+      padding: 3rem;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+    }
+    &__wrapper:hover {
+      border: 2px groove #008AD8;
+      box-shadow: #008AD8 0px 5px 15px;
+    }
+  
+    &__wrapper h1 {
+      text-align: left;
+      font-family: "Netflix Sans", sans-serif;
+      color: white;
+      font-size: 20px;
+    }
+  
+    &__email-input-box {
+      display: flex;
+      width: 100%;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+    }
+    &__email-input {
+      width: 90%;
+      height: 45px;
+      padding: 10px;
+      border: 1px solid rgba(182, 178, 178, 0.1);
+      border-radius: 5px;
+      outline: none;
+      text-align: left;
+      font-weight: 500;
+      color: white;
+      background-color: rgba(182, 178, 178, 0.01)
+    }
+    &__email-input:focus {
+      border: 2px solid #008AD8;
+      color:  white;
+    }
+  
+    &__email-input:focus::placeholder {
+      color: #008AD8;
+    }
+    &__password-input-box {
+      display: flex;
+      width: 100%;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+    }
+    &__password-input {
+      width: 90%;
+      height: 45px;
+      padding: 10px;
+      border: 1px solid rgba(182, 178, 178, 0.1);
+      border-radius: 5px;
+      outline: none;
+      text-align: left;
+      font-weight: 500;
+      color: white;
+      background-color: rgba(182, 178, 178, 0.01);
+    }
+    &__password-input:focus {
+      border: 2px solid #008AD8;
+      color:  white;
+    }
+  
+    &__password-input:focus::placeholder {
+      color: #008AD8;
+    }
+  
+    /* Buttons Styling */
+    &__show-password-btn {
+      display: flex;
+      height: 30px;
+      width: 120px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(182, 178, 178, 0.1);
+      border-radius: 5px;
+      color: white;
+      background-color: rgba(182, 178, 178, 0.01);
+    }
+    &__show-password-btn:hover {
+      background-color: #008AD8;
+      border-color: #008AD8;
+      color: white;
+    }
+    &__submit-btn {
+      display: flex;
+      height: 30px;
+      width: 70px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(182, 178, 178, 0.1);
+      border-radius: 5px;
+      color: white;
+      background-color: rgba(182, 178, 178, 0.01);
+    }
+    &__submit-btn:hover {
+      background-color: #008AD8;
+      border-color: #008AD8;
+      color: white;
+    }
+  
+    
+  
+    
+  }
+  
