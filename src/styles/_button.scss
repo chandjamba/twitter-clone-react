@@ -1,0 +1,33 @@
+@mixin button-base {
+    padding: $spacing-sm $spacing-md;
+    border-radius: $radius-full;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  
+  .btn-primary {
+    @include button-base;
+    background-color: $primary-color;
+    color: white;
+    
+    &:hover:not(:disabled) {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+  
+  .btn-outline {
+    @include button-base;
+    background-color: transparent;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    
+    &:hover:not(:disabled) {
+      background-color: rgba($primary-color, 0.1);
+    }
+  }
