@@ -1,24 +1,43 @@
 import { useState } from "react"
 import "./signUpPage.scss"
+import { account, ID } from "../lib/appwrite";
 
 export default function SignUpPage() {
 const [showPassword, setShowPassword] = useState(false);
 
+// Toggle Show password Button handler // 
 function togglePassword() {
   setShowPassword(!showPassword)
+}
+
+// Create Form SignUp submit button handler to access the all form data in once. //
+const signUpButtonHandler =  async(event) => {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const formDataEntries = formData.entries();
+  const formDataObject = Object.fromEntries(formDataEntries);
+  console.log(formDataObject, "formDataObject");
+
+  // Create AuthUser/ Account in appwrite. By given below method. //
+  const createdAccount =  await account.create(
+    ID.unique(),
+    formDataObject.email,
+    formDataObject.password,
+  );
+  console.log(createdAccount, "Account created");
 }
 
 
     return (
       <div className="signUp">
-        <form className="signUp__form" >
+        <form className="signUp__form" onSubmit={signUpButtonHandler}>
         <div className="signUp__wrapper">
           <h1>Create your account</h1>
           <div className="signUp__email-input-box">
             <input
               className="signUp__email-input"
               type="email"
-              name="enterEmail"
+              name="email"
               placeholder="Email"
               required
             />
@@ -27,7 +46,7 @@ function togglePassword() {
             <input
               className="signUp__password-input"
               type={showPassword ? "text" : "password"}
-              name="enterPassword"
+              name="password"
               placeholder="Password"
               required
             />
