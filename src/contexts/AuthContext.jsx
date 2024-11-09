@@ -7,7 +7,7 @@ export const AuthContext = createContext();
 
 
 // Step 2 Create hook which return the value from useContext.
-export const useAuthcontext = () => {
+export const useAuthContext = () => {
     return useContext(AuthContext);
 };
 
