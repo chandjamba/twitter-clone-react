@@ -3,6 +3,7 @@ import { AuthContextProvider } from "./contexts/AuthContext";
 // import "./index.css";
 import SignUpPage from "./Components/SignUpPage";
 import SignInPage from "./Components/SignInPage";
+import "./index.css";
 
 function App() {
   return (

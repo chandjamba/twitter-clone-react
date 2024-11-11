@@ -1,133 +1,219 @@
-
 .signUp {
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  &__form {
     display: flex;
     flex-direction: column;
-    height: 800px;
-    width: 100;
+    width: 400px;
+    height: 500px;
     align-items: center;
     justify-content: center;
-    background-color: #000000;
-    &__form {
-      display: flex;
-      flex-direction: column;
-      width: 400px;
-      height: 500px;
-    }
-    &__wrapper {
-      display: flex;
-      width: 450px;
-      height: 600px;
-      background-color: rgba(182, 178, 178, 0.1);
-      border: 1px solid rgba(182, 178, 178, 0.1);
-      border-radius: 5px;
-      padding: 3rem;
-      justify-content: space-around;
-      align-items: center;
-      flex-direction: column;
-    }
-    &__wrapper:hover {
-      border: 2px groove #008AD8;
-      box-shadow: #008AD8 0px 5px 15px;
-    }
-  
-    &__wrapper h1 {
-      text-align: left;
-      font-family: "Netflix Sans", sans-serif;
-      color: white;
-      font-size: 20px;
-    }
-  
-    &__email-input-box {
-      display: flex;
-      width: 100%;
-      height: 50px;
-      align-items: center;
-      justify-content: center;
-    }
-    &__email-input {
-      width: 90%;
-      height: 45px;
-      padding: 10px;
-      border: 1px solid rgba(182, 178, 178, 0.1);
-      border-radius: 5px;
-      outline: none;
-      text-align: left;
-      font-weight: 500;
-      color: white;
-      background-color: rgba(182, 178, 178, 0.01)
-    }
-    &__email-input:focus {
-      border: 2px solid #008AD8;
-      color:  white;
-    }
-  
-    &__email-input:focus::placeholder {
-      color: #008AD8;
-    }
-    &__password-input-box {
-      display: flex;
-      width: 100%;
-      height: 50px;
-      align-items: center;
-      justify-content: center;
-    }
-    &__password-input {
-      width: 90%;
-      height: 45px;
-      padding: 10px;
-      border: 1px solid rgba(182, 178, 178, 0.1);
-      border-radius: 5px;
-      outline: none;
-      text-align: left;
-      font-weight: 500;
-      color: white;
-      background-color: rgba(182, 178, 178, 0.01);
-    }
-    &__password-input:focus {
-      border: 2px solid #008AD8;
-      color:  white;
-    }
-  
-    &__password-input:focus::placeholder {
-      color: #008AD8;
-    }
-  
-    /* Buttons Styling */
-    &__show-password-btn {
-      display: flex;
-      height: 30px;
-      width: 120px;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(182, 178, 178, 0.1);
-      border-radius: 5px;
-      color: white;
-      background-color: rgba(182, 178, 178, 0.01);
-    }
-    &__show-password-btn:hover {
-      background-color: #008AD8;
-      border-color: #008AD8;
-      color: white;
-    }
-    &__submit-btn {
-      display: flex;
-      height: 30px;
-      width: 70px;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(182, 178, 178, 0.1);
-      border-radius: 5px;
-      color: white;
-      background-color: rgba(182, 178, 178, 0.01);
-    }
-    &__submit-btn:hover {
-      background-color: #008AD8;
-      border-color: #008AD8;
-      color: white;
-    }
-  
-    
-  
-    
   }
-  
+  &__wrapper {
+    display: flex;
+    width: 450px;
+    height: 100%;
+    background-color: rgba(182, 178, 178, 0.1);
+    border: 1px solid rgba(182, 178, 178, 0.1);
+    border-radius: 5px;
+    padding: 3rem;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__wrapper:hover {
+    border: 1px solid #008ad8;
+    box-shadow: #008ad8 0px 5px 15px;
+  }
+
+  &__wrapper h1 {
+    text-align: left;
+    font-family: "Netflix Sans", sans-serif;
+    color: white;
+    font-size: 20px;
+  }
+  &__name-input-box {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 60px;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &__name-input-inner-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgba(182, 178, 178, 0.1);
+    border-radius: 5px;
+  }
+  &__name-input {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid rgba(182, 178, 178, 0.2);
+    border-radius: 5px;
+    outline: none;
+    text-align: left;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(182, 178, 178, 0.01);
+  }
+  &__name-input:hover {
+    border: 2px solid #008ad8;
+    color: white;
+  }
+
+  &__name-input:hover::placeholder {
+    color: #008ad8;
+  }
+  &__name-input-error {
+    color: red;
+    font-size: 12px;
+    margin: 5px;
+    font-family: Arial, sans-serif;
+  }
+  &__email-input-box {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 60px;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &__email-input-inner-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgba(182, 178, 178, 0.1);
+    border-radius: 5px;
+  }
+  &__email-input {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    border: 1px solid rgba(182, 178, 178, 0.2);
+    border-radius: 5px;
+    outline: none;
+    text-align: left;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(182, 178, 178, 0.01);
+  }
+  &__email-input:hover {
+    border: 2px solid #008ad8;
+    color: white;
+  }
+
+  &__email-input:hover::placeholder {
+    color: #008ad8;
+  }
+  &__email-input-error {
+    color: red;
+    font-size: 12px;
+    margin: 5px;
+    font-family: Arial, sans-serif;
+  }
+  &__password-input-box {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 60px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+  }
+  &__password-input-box:hover {
+    border: 2px solid #008ad8;
+    color: white;
+  }
+  &__password-input-show-btn-inner-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid rgba(182, 178, 178, 0.1);
+    border-radius: 5px;
+  }
+  &__password-input {
+    display: flex;
+    width: 80%;
+    height: 60px;
+    padding: 10px;
+    border-left: 1px solid rgba(182, 178, 178, 0.2);
+    border-top: 1px solid rgba(182, 178, 178, 0.2);
+    border-right: none;
+    border-bottom: 1px solid rgba(182, 178, 178, 0.2);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    outline: none;
+    text-align: left;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(182, 178, 178, 0.01);
+  }
+
+  &__password-input:hover::placeholder {
+    color: #008ad8;
+  }
+  &__password-input-error {
+    color: red;
+    font-size: 12px;
+    margin: 5px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* Buttons Styling */
+  &__show-password-btn {
+    width: 20%;
+    height: 60px;
+    padding: 10px;
+    border-left: none;
+    border-top: 1px solid rgba(182, 178, 178, 0.2);
+    border-right: 1px solid rgba(182, 178, 178, 0.2);
+    border-bottom: 1px solid rgba(182, 178, 178, 0.2);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    outline: none;
+    text-align: right;
+    font-weight: 500;
+    color: grey;
+    background-color: rgba(182, 178, 178, 0.01);
+  }
+
+  &__show-password-btn:hover {
+    color: white;
+  }
+  &__submit-btn {
+    display: flex;
+    height: 35px;
+    width: 80px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(182, 178, 178, 0.2);
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(182, 178, 178, 0.01);
+    margin-top: 5px;
+  }
+  &__submit-btn:hover {
+    background-color: #008ad8;
+    border-color: #008ad8;
+    color: white;
+  }
+}
