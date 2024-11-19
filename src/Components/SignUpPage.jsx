@@ -56,7 +56,7 @@ export default function SignUpPage() {
               />
             </div>
 
-            {!nameError && (
+            {nameError && (
               <p className="signUp__name-input-error">
                 Please enter name inside input
               </p>
@@ -72,7 +72,7 @@ export default function SignUpPage() {
                 required
               />
             </div>
-            {!emailError && (
+            {emailError && (
               <p className="signUp__email-input-error">
                 Please check your email !
               </p>
@@ -129,7 +129,7 @@ export default function SignUpPage() {
                 )}
               </button>
             </div>
-            {!passwordError && (
+            {passwordError && (
               <p className="signUp__password-input-error">
                 Please check your password !
               </p>
