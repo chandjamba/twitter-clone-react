@@ -5,9 +5,9 @@ import "./signUpPage.scss";
 
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
-  const [nameError, setNameError] = useState(true);
-  const [emailError, setEmailError] = useState(true);
-  const [passwordError, setPasswordError] = useState(true);
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
 
   // Toggle Show password Button handler //
   function togglePassword() {
