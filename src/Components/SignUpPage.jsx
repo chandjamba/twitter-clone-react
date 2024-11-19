@@ -2,6 +2,7 @@ import { useState } from "react";
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { validatePasswordWithRegex } from "../lib/utils/validatePasswordWithRegex";
 import "./signUpPage.scss";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
