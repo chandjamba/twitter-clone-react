@@ -58,7 +58,6 @@ export default function SignUpPage() {
 
             {!nameError && (
               <p className="signUp__name-input-error">
-                {" "}
                 Please enter name inside input
               </p>
             )}
