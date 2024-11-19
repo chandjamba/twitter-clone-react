@@ -1,10 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AuthContextProvider } from "./contexts/AuthContext";
-// import "./index.css";
-import SignUpPage from "./Components/SignUpPage";
 import SignInPage from "./Components/SignInPage";
-import "./index.css";
-
+import SignUpPage from "./Components/SignUpPage";
+import { AuthContextProvider } from "./contexts/AuthContext";
 function App() {
   return (
     <BrowserRouter>
