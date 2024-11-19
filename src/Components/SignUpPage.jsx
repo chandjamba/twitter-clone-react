@@ -23,15 +23,15 @@ export default function SignUpPage() {
 
     // Email input validation function call. //
     const isValidEmail = validateEmailWithRegex(formDataObject.email);
-    setEmailError(isValidEmail);
+    setEmailError(!isValidEmail);
 
     //  Password input validation function call. //
     const isValidPassword = validatePasswordWithRegex(formDataObject.password);
-    setPasswordError(isValidPassword);
+    setPasswordError(!isValidPassword);
 
     // Name input validation function call. //
     const nameInputNoWhiteSpace = formDataObject.name.trim().length > 0;
-    setNameError(nameInputNoWhiteSpace);
+    setNameError(!nameInputNoWhiteSpace);
 
     if (!isValidEmail || !isValidPassword || !nameInputNoWhiteSpace) {
       return;
