@@ -1,8 +1,7 @@
 import { useState } from "react";
-import "./signUpPage.scss";
-import { account, ID } from "../lib/appwrite";
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { validatePasswordWithRegex } from "../lib/utils/validatePasswordWithRegex";
+import "./signUpPage.scss";
 
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
