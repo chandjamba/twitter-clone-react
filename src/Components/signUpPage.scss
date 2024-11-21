@@ -21,7 +21,6 @@
 
   &__wrapper h1 {
     text-align: left;
-    font-family: "Netflix Sans", sans-serif;
     color: white;
     font-size: 20px;
   }
@@ -61,7 +60,6 @@
     color: $error-color;
     font-size: 12px;
     margin: 5px;
-    font-family: Arial, sans-serif;
   }
   &__email-input-box {
     @include flex(column, space-around, center);
@@ -99,7 +97,6 @@
     color: $error-color;
     font-size: 12px;
     margin: 5px;
-    font-family: Arial, sans-serif;
   }
   &__password-input-box {
     @include flex(column, space-around, center);
@@ -142,7 +139,6 @@
     color: $error-color;
     font-size: 12px;
     margin: 5px;
-    font-family: Arial, sans-serif;
   }
 
   /* Buttons Styling */
