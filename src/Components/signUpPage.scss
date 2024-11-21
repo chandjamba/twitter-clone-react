@@ -18,10 +18,6 @@
     border-radius: 5px;
     padding: 3rem;
   }
-  &__wrapper:hover {
-    border: 1px solid $primary-color;
-    box-shadow: $primary-color 0px 5px 15px;
-  }
 
   &__wrapper h1 {
     text-align: left;
@@ -170,17 +166,7 @@
   &__show-password-btn:hover {
     color: $text-color;
   }
-  &__submit-btn {
-    // @include flex(column, center, center);
-    // height: 35px;
-    // width: 80px;
-    // border: 1px solid $border-color;
-    // border-radius: 5px;
-    // color: $text-color;
-    // background-color: $background-color;
-    // margin-top: 5px;
-    
-  }
+
   &__submit-btn:hover {
     background-color: $primary-color;
     border-color: $primary-color;
