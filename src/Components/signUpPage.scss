@@ -21,8 +21,8 @@
 
   &__wrapper h1 {
     text-align: left;
-    color: white;
-    font-size: 20px;
+    color: $text-color;
+    font-size: $font-xl;
   }
   &__name-input-box {
     @include flex(column, space-around, center);
@@ -58,7 +58,7 @@
   }
   &__name-input-error {
     color: $error-color;
-    font-size: 12px;
+    font-size: $font-xs;
     margin: 5px;
   }
   &__email-input-box {
@@ -95,7 +95,7 @@
   }
   &__email-input-error {
     color: $error-color;
-    font-size: 12px;
+    font-size: $font-xs;
     margin: 5px;
   }
   &__password-input-box {
@@ -137,7 +137,7 @@
   }
   &__password-input-error {
     color: $error-color;
-    font-size: 12px;
+    font-size: $font-xs;
     margin: 5px;
   }
 
