@@ -1,0 +1,171 @@
+@import "../styles/main.scss";
+.signIn {
+  height: 700px;
+  width: 100%;
+  background-color: $black;
+  @include flex(column, center, center);
+  &__form {
+    @include flex(column, center, center);
+    width: 400px;
+    height: 500px;
+  }
+  &__wrapper {
+    @include flex(column, space-around, center);
+    width: 450px;
+    height: 100%;
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    border-radius: $radius-sm;
+    padding: 48px;
+  }
+
+  &__wrapper h1 {
+    text-align: left;
+    color: $text-color;
+    font-size: $font-xl;
+  }
+  &__name-input-box {
+    @include flex(column, space-around, center);
+    width: 95%;
+    height: 60px;
+  }
+  &__name-input-inner-box {
+    @include flex(column, space-around, center);
+    width: 100%;
+    height: 60px;
+    border: 1px solid $border-color;
+    border-radius: $radius-sm;
+  }
+  &__name-input {
+    width: 100%;
+    height: 60px;
+    padding: 16px;
+    border: 1px solid $border-color;
+    border-radius: $radius-sm;
+    outline: none;
+    text-align: left;
+    font-weight: 500;
+    color: $text-color;
+    background-color: $input-background-color;
+  }
+  &__name-input:hover {
+    border: 2px solid $primary-color;
+    color: $text-color;
+  }
+
+  &__name-input:hover::placeholder {
+    color: $primary-color;
+  }
+  &__name-input-error {
+    color: $error-color;
+    font-size: $font-xs;
+    margin: 4px;
+  }
+  &__email-input-box {
+    @include flex(column, space-around, center);
+    width: 95%;
+    height: 60px;
+  }
+  &__email-input-inner-box {
+    @include flex(column, space-around, center);
+    width: 100%;
+    height: 60px;
+    border: 1px solid $border-color;
+    border-radius: $radius-sm;
+  }
+  &__email-input {
+    width: 100%;
+    height: 60px;
+    padding: 16px;
+    border: 1px solid $border-color;
+    border-radius: $radius-sm;
+    outline: none;
+    text-align: left;
+    font-weight: 500;
+    color: $text-color;
+    background-color: $input-background-color;
+  }
+  &__email-input:hover {
+    border: 2px solid $primary-color;
+    color: $text-color;
+  }
+
+  &__email-input:hover::placeholder {
+    color: $primary-color;
+  }
+  &__email-input-error {
+    color: $error-color;
+    font-size: $font-xs;
+    margin: 4px;
+  }
+  &__password-input-box {
+    @include flex(column, space-around, center);
+    width: 95%;
+    height: 60px;
+    border-radius: $radius-sm;
+  }
+  &__password-input-box:hover {
+    border: 2px solid $primary-color;
+    color: $text-color;
+  }
+  &__password-input-show-btn-inner-box {
+    @include flex(space-around, center);
+    width: 100%;
+    height: 60px;
+    border: 1px solid $border-color;
+    border-radius: $radius-sm;
+  }
+  &__password-input {
+    width: 90%;
+    height: 60px;
+    padding: 16px;
+    border-left: 1px solid $border-color;
+    border-top: 1px solid $border-color;
+    border-right: none;
+    border-bottom: 1px solid $border-color;
+    border-top-left-radius: $radius-sm;
+    border-bottom-left-radius: $radius-sm;
+    outline: none;
+    text-align: left;
+    font-weight: 500;
+    color: $text-color;
+    background-color: $input-background-color;
+  }
+
+  &__password-input:hover::placeholder {
+    color: $primary-color;
+  }
+  &__password-input-error {
+    color: $error-color;
+    font-size: $font-xs;
+    margin: 4px;
+  }
+
+  /* Buttons Styling */
+  &__show-password-btn {
+    width: 20%;
+    height: 60px;
+    padding: 16px;
+    border-left: none;
+    border-top: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    border-top-right-radius: $radius-sm;
+    border-bottom-right-radius: $radius-sm;
+    outline: none;
+    text-align: right;
+    font-weight: 500;
+    color: $gray-dark;
+    background-color: $input-background-color;
+  }
+
+  &__show-password-btn:hover {
+    color: $text-color;
+  }
+
+  &__submit-btn:hover {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: $text-color;
+  }
+}
