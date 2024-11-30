@@ -1,26 +1,45 @@
+import { Eye, EyeOff } from "lucide-react";
+import { useState } from "react";
+import "./signInPage.scss"
+import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
+
 export default function SignInPage() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+
+  // Toggle Show password Button handler //
+  function togglePassword() {
+    setShowPassword(!showPassword);
+  }
+
+  
+
+  // Create Form SignIn submit button handler to access the all form data in once. //
+  const signInButtonHandler = async(event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const formDataEntries = formData.entries();
+    const formDataObject = Object.fromEntries(formDataEntries);
+    const resp = formDataObject;
+    console.log(resp);
+
+    // Email input validation function call. //
+    const isValidEmail = validateEmailWithRegex(formDataObject.email);
+    setEmailError(!isValidEmail)
+
+  }
+  // SignIn button type handlre function. //
+function signInButtonTypeHandler() {
+  
+}
+  
+
     return (
         <div className="signIn">
       <form className="signIn__form" onSubmit={signInButtonHandler}>
         <div className="signIn__wrapper">
-          <h1>Create your account</h1>
-          <div className="signIn__name-input-box">
-            <div className="signIn__name-input-inner-box">
-              <input
-                className="signIn__name-input"
-                type="text"
-                name="name"
-                placeholder="Name"
-                required
-              />
-            </div>
-
-            {nameError && (
-              <p className="signIn__name-input-error">
-                Please enter name inside input
-              </p>
-            )}
-          </div>
+          <h1>Sign In</h1>
           <div className="signIn__email-input-box">
             <div className="signIn__email-input-inner-box">
               <input
@@ -60,8 +79,8 @@ export default function SignInPage() {
               </p>
             )}
           </div>
-          <button className="signIn__submit-btn btn-primary" type="submit">
-            Sign Up
+          <button className="signIn__submit-btn btn-primary" type= {signInButtonTypeHandler ? "submit" : "disabled"}>
+            Sign In
           </button>
         </div>
       </form>
