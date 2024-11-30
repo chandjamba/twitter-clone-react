@@ -43,4 +43,11 @@ export const authService = {
       console.log(error);
     }
   },
+  async getCurrentUser() {
+    try {
+      return await account.get();
+    } catch (error) {
+      console.log(error);
+    }
+  },
 };
