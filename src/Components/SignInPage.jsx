@@ -29,7 +29,7 @@ export default function SignInPage() {
 
     return (
         <div className="signIn">
-      <form className="signIn__form" onSubmit={signInButtonHandler}>``
+      <form className="signIn__form" onSubmit={signInButtonHandler}>
         <div className="signIn__wrapper">
           <h1>Sign In</h1>
           <div className="signIn__email-input-box">
