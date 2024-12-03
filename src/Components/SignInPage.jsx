@@ -2,11 +2,13 @@ import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import "./signInPage.scss"
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
+import {validatePasswordWithRegex} from "../lib/utils/validatePasswordWithRegex";
 
 export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [buttonType, setButtonType] = useState();
 
   // Toggle Show password Button handler //
   function togglePassword() {
@@ -27,17 +29,25 @@ export default function SignInPage() {
     // Email input validation function call. //
     const isValidEmail = validateEmailWithRegex(formDataObject.email);
     setEmailError(!isValidEmail)
+    
+    // Password input validation function call. //
+    const isValidPassword = validatePasswordWithRegex(formDataObject.password);
+    setPasswordError(!isValidPassword)
 
+    // Email input validation for no white space. //
+    const emailInputNoWhiteSpace = formDataObject.email.trim().length > 0;
+    
+    // Password input validation for no white space. //
+    const passwordInputNoWhiteSpace = formDataObject.password.trim().length > 0;
+    
+    // signIn button disable on invalid or empty inputs. //
+    setButtonType(!isValidEmail && !emailInputNoWhiteSpace && !passwordInputNoWhiteSpace);
   }
-  // SignIn button type handlre function. //
-function signInButtonTypeHandler() {
-  
-}
   
 
     return (
         <div className="signIn">
-      <form className="signIn__form" onSubmit={signInButtonHandler}>
+      <form className="signIn__form" onSubmit={signInButtonHandler}>``
         <div className="signIn__wrapper">
           <h1>Sign In</h1>
           <div className="signIn__email-input-box">
@@ -79,7 +89,7 @@ function signInButtonTypeHandler() {
               </p>
             )}
           </div>
-          <button className="signIn__submit-btn btn-primary" type= {signInButtonTypeHandler ? "submit" : "disabled"}>
+          <button className="signIn__submit-btn btn-primary" type = {buttonType ? "submit" : "disabled"} >
             Sign In
           </button>
         </div>
