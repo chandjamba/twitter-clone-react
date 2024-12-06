@@ -1,18 +1,16 @@
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import "./signInPage.scss"
+import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 
 export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
 
   // Toggle Show password Button handler //
   function togglePassword() {
     setShowPassword(!showPassword);
   }
-
-  
 
   // Create Form SignIn submit button handler to access the all form data in once. //
   const signInButtonHandler = async(event) => {
@@ -23,7 +21,9 @@ export default function SignInPage() {
     const resp = formDataObject;
     console.log(resp);
 
-   
+  // Email input validation function call. //
+    const isValidEmail = validateEmailWithRegex(formDataObject.email);
+    setEmailError(!isValidEmail);
   }
   
 
@@ -65,11 +65,7 @@ export default function SignInPage() {
                 {showPassword ? <EyeOff /> : <Eye />}
               </button>
             </div>
-            {passwordError && (
-              <p className="signIn__password-input-error">
-                Please check your password !
-              </p>
-            )}
+              
           </div>
           <button className="signIn__submit-btn btn-primary" type="submit" >
             Sign In
