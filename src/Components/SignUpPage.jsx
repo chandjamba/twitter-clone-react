@@ -40,11 +40,11 @@ export default function SignUpPage() {
     }
 
     // Create AuthUser/ Account in appwrite. By given below method. //
-    const createdAccount = authService.createAccount(
-      formDataObject.name,
-      formDataObject.email,
-      formDataObject.password,
-    );
+    const createdAccount = await authService.createAccount({
+      email: formDataObject.email,
+      password: formDataObject.password,
+      name: formDataObject.name,
+    });
     console.log(createdAccount);
   };
 

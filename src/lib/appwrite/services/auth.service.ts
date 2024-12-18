@@ -15,6 +15,7 @@ export const authService = {
     } catch (error) {
       console.log(error);
     }
+    console.log(ID.unique());
   },
   async createSession({
     email,
