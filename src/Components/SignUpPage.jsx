@@ -3,6 +3,7 @@ import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { validatePasswordWithRegex } from "../lib/utils/validatePasswordWithRegex";
 import "./signUpPage.scss";
 import { Eye, EyeOff } from "lucide-react";
+import { authService } from "../lib/appwrite/services/auth.service";
 
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -39,6 +40,12 @@ export default function SignUpPage() {
     }
 
     // Create AuthUser/ Account in appwrite. By given below method. //
+    const createdAccount = authService.createAccount(
+      formDataObject.name,
+      formDataObject.email,
+      formDataObject.password,
+    );
+    console.log(createdAccount);
   };
 
   return (
