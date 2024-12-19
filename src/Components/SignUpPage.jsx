@@ -46,6 +46,13 @@ export default function SignUpPage() {
       name: formDataObject.name,
     });
     console.log(createdAccount);
+    // Create a login session for the user. //
+    const createdLoginSession = await authService.createSession({
+      email: formDataObject.email,
+      password: formDataObject.password,
+    });
+    console.log("session created", createdLoginSession);
+    // Send an verification email asap after sessiom created.//
   };
 
   return (
