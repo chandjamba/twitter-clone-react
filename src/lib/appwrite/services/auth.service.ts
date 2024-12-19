@@ -31,8 +31,8 @@ export const authService = {
   },
   async createUserVerification() {
     try {
-      // TODO: This url will be replaced after that route is created in frontend.  
-      return await account.createVerification("url");  
+      // TODO: This url will be replaced after that route is created in frontend.
+      return await account.createVerification("url");
     } catch (error) {
       console.log(error);
     }

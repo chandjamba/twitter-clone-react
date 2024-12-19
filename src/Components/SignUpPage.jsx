@@ -3,6 +3,7 @@ import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { validatePasswordWithRegex } from "../lib/utils/validatePasswordWithRegex";
 import "./signUpPage.scss";
 import { Eye, EyeOff } from "lucide-react";
+import { authService } from "../lib/appwrite/services/auth.service";
 
 export default function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -39,6 +40,19 @@ export default function SignUpPage() {
     }
 
     // Create AuthUser/ Account in appwrite. By given below method. //
+    const createdAccount = await authService.createAccount({
+      email: formDataObject.email,
+      password: formDataObject.password,
+      name: formDataObject.name,
+    });
+    console.log(createdAccount);
+    // Create a login session for the user. //
+    const createdLoginSession = await authService.createSession({
+      email: formDataObject.email,
+      password: formDataObject.password,
+    });
+    console.log("session created", createdLoginSession);
+    // Send an verification email asap after sessiom created.//
   };
 
   return (
