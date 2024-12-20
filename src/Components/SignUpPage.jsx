@@ -52,7 +52,7 @@ export default function SignUpPage() {
       password: formDataObject.password,
     });
     console.log("session created", createdLoginSession);
-    // Send an verification email asap after sessiom created.//
+    // Send an verification email asap after session created.//
   };
 
   return (
