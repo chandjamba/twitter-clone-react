@@ -1,4 +1,10 @@
+import "./emailVerificationPage.scss";
+
 export default function EmailVerificationPage() {
+  const verifyEmailHandler = async () => {
+    const verification = await createUserVerification();
+  };
+
   return (
     <div className="verifyEmail">
       <div className="verifyEmail__inner-box">

@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignUpPage from "./Components/SignUpPage";
 import SignInPage from "./Components/SignInPage";
-import emailVerificationPage from "./Components/emaiVerificationPage";
+import EmailVerificationPage from "./Components/EmailVerificationPage";
 import "./styles/main.scss";
 
 function App() {
@@ -17,5 +17,4 @@ function App() {
     </BrowserRouter>
   );
 }
-
 export default App;
