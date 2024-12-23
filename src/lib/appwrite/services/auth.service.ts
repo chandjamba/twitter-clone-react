@@ -31,8 +31,9 @@ export const authService = {
   },
   async createUserVerification() {
     try {
-      // TODO: This url will be replaced after that route is created in frontend.
-      return await account.createVerification("url");
+      return await account.createVerification(
+        "http://localhost:5173/confirm-email"
+      );
     } catch (error) {
       console.log(error);
     }
