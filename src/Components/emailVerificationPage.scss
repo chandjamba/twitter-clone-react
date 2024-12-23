@@ -1,0 +1,47 @@
+.verifyEmail {
+  display: flex;
+  flex-direction: column;
+  height: 700px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: #002244;
+  &__inner-box {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(182, 178, 178, 0.2);
+    border: 1px solid rgba(182, 178, 178, 0.2);
+    border-radius: 5px;
+  }
+  &__para-box {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  &__para {
+    color: white;
+    font-size: large;
+  }
+  &__btn {
+    display: flex;
+    height: 30px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(182, 178, 178, 0.2);
+    border-radius: 5px;
+    background-color: rgba(182, 178, 178, 0.2);
+    color: white;
+  }
+  &__btn:hover {
+    border-color: white;
+    background-color: white;
+    color: black;
+  }
+}
