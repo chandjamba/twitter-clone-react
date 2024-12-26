@@ -8,8 +8,8 @@ export default function ConfirmEmail() {
   const userId = params.get("userId");
   const secret = params.get("secret");
 
-  useEffect(async()=> {
-    await createUserVerification();
+  useEffect( async()=> {
+    await authService.createUserVerification(userId, secret);
   }, []);
     
   return <div className="confirmEmail">confirm email</div>;
