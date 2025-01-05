@@ -1,4 +1,5 @@
 import { account, ID } from "../client";
+import { APPWRITE_CONFIG } from "../config";
 
 export const authService = {
   async createAccount({
@@ -31,20 +32,12 @@ export const authService = {
   },
   async createUserVerification() {
     try {
-      return await account.createVerification(
-        "http://localhost:5173/confirm-email"
-      );
+      return await account.createVerification(APPWRITE_CONFIG.url);
     } catch (error) {
       console.log(error);
     }
   },
-  async createUserVerified({userId, secret}: {userId:string, secret:string}) {
-    try {
-      return await account.updateVerification(userId, secret);
-    } catch (error) {
-      console.log(error);
-    }
-  },
+
   async deleteSession() {
     try {
       return await account.deleteSessions();

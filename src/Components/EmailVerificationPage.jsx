@@ -1,10 +1,10 @@
 import "./emailVerificationPage.scss";
-import "../lib/appwrite/services/auth.service"
-
+import "../lib/appwrite/services/auth.service";
 
 export default function EmailVerificationPage() {
   const verifyEmailHandler = async () => {
     const verification = await authService.createUserVerification();
+    Console.log(verification, "verification done");
   };
 
   return (

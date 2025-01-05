@@ -4,8 +4,11 @@ import { validatePasswordWithRegex } from "../lib/utils/validatePasswordWithRege
 import "./signUpPage.scss";
 import { Eye, EyeOff } from "lucide-react";
 import { authService } from "../lib/appwrite/services/auth.service";
+import { APPWRITE_CONFIG } from "../lib/appwrite/config";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUpPage() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [nameError, setNameError] = useState(false);
   const [emailError, setEmailError] = useState(false);
@@ -51,6 +54,15 @@ export default function SignUpPage() {
       password: formDataObject.password,
     });
     // Send an verification email asap after session created.//
+    const createdEmailVerification = await authService.createUserVerification(
+      APPWRITE_CONFIG.url
+    );
+    // Send an email for user verification delete the browser session. So, no any user can login without verification complete. //
+    // This step is for delete signIn browser session. //
+    const deleteAccountSession = await authService.deleteSession();
+    // Navigate the page direct to sign in page. //
+    // Just follow up the given 4 methods and enter to sign in page of application. //
+    navigate("/signin");
   };
 
   return (
