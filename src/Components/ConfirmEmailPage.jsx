@@ -10,7 +10,7 @@ export default function ConfirmEmail() {
   const secret = params.get("secret");
 
   useEffect(() => {
-    createUserVerified(userId, secret);
+    authService.createUserVerification();
   }, []);
 
   return <div className="confirmEmail">confirm email</div>;

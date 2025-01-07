@@ -37,7 +37,19 @@ export const authService = {
       console.log(error);
     }
   },
-
+  async createUpdateVerification({
+    userId,
+    secret,
+  }: {
+    userId: string;
+    secret: string;
+  }) {
+    try {
+      return await account.updateVerification(userId, secret);
+    } catch (error) {
+      console.log(error);
+    }
+  },
   async deleteSession() {
     try {
       return await account.deleteSessions();
