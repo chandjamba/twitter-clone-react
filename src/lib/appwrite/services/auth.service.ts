@@ -32,12 +32,12 @@ export const authService = {
   },
   async createUserVerification() {
     try {
-      return await account.createVerification(APPWRITE_CONFIG.url);
+      return await account.createVerification(APPWRITE_CONFIG.sendVerificationEmailUrl);
     } catch (error) {
       console.log(error);
     }
   },
-  async createUpdateVerification({
+  async updateVerification({
     userId,
     secret,
   }: {

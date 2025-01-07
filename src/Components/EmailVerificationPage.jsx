@@ -1,10 +1,15 @@
 import "./emailVerificationPage.scss";
 import "../lib/appwrite/services/auth.service";
+import { authService } from "../lib/appwrite/services/auth.service";
+import { useSearchParams } from "react-router-dom";
 
 export default function EmailVerificationPage() {
+  const [params] = useSearchParams();
+  const userId = params.get("userId");
+  const secret = params.get("secret");
+
   const verifyEmailHandler = async () => {
-    const verification = await authService.createUserVerification();
-    Console.log(verification, "verification done");
+    await authService.updateVerification({ userId, secret });
   };
 
   return (
