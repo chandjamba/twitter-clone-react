@@ -1,7 +1,8 @@
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
-import "./signInPage.scss"
+import "./signInPage.scss";
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
+import { authService } from "../lib/appwrite/services/auth.service";
 
 export default function SignInPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,22 +14,27 @@ export default function SignInPage() {
   }
 
   // Create Form SignIn submit button handler to access the all form data in once. //
-  const signInButtonHandler = async(event) => {
+  const signInButtonHandler = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const formDataEntries = formData.entries();
     const formDataObject = Object.fromEntries(formDataEntries);
-    const resp = formDataObject;
-    console.log(resp);
+    const loggedInAccount = await authService.createSession({
+      email: formDataObject.email,
+      password: formDataObject.password,
+    });
+    if (loggedInAccount.$id) {
+      navigate("/verify-email");
+    }
 
-  // Email input validation function call. //
+    // Email input validation function call. //
     const isValidEmail = validateEmailWithRegex(formDataObject.email);
     setEmailError(!isValidEmail);
-  }
-  
+    //
+  };
 
-    return (
-        <div className="signIn">
+  return (
+    <div className="signIn">
       <form className="signIn__form" onSubmit={signInButtonHandler}>
         <div className="signIn__wrapper">
           <h1>Sign In</h1>
@@ -65,13 +71,12 @@ export default function SignInPage() {
                 {showPassword ? <EyeOff /> : <Eye />}
               </button>
             </div>
-              
           </div>
-          <button className="signIn__submit-btn btn-primary" type="submit" >
+          <button className="signIn__submit-btn btn-primary" type="submit">
             Sign In
           </button>
         </div>
       </form>
     </div>
-    )
+  );
 }
