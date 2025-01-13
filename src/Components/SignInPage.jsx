@@ -24,7 +24,7 @@ export default function SignInPage() {
       password: formDataObject.password,
     });
     if (loggedInAccount.$id) {
-      navigate("/verify-email");
+      navigate("/");
     }
 
     // Email input validation function call. //
