@@ -1,9 +1,0 @@
-@import "../styles/main.scss";
-.homepage {
-  height: 700px;
-  width: 100%;
-  background-color: $black;
-  color: $primary-color;
-  font-size: $font-2xl;
-  @include flex(column, center, center);
-}
