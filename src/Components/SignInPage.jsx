@@ -3,8 +3,10 @@ import { useState } from "react";
 import "./signInPage.scss";
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { authService } from "../lib/appwrite/services/auth.service";
+import { useNavigate } from "react-router-dom";
 
 export default function SignInPage() {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState(false);
 
@@ -23,8 +25,9 @@ export default function SignInPage() {
       email: formDataObject.email,
       password: formDataObject.password,
     });
+
     if (loggedInAccount.$id) {
-      navigate("/verify-email");
+      navigate("/homepage");
     }
 
     // Email input validation function call. //
