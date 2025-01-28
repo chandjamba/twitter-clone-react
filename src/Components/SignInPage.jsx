@@ -21,28 +21,30 @@ export default function SignInPage() {
     const formData = new FormData(event.target);
     const formDataEntries = formData.entries();
     const formDataObject = Object.fromEntries(formDataEntries);
-    await authService.createSession({
-      email: formDataObject.email,
-      password: formDataObject.password,
-    });
-
-    const currentUser = await authService.getCurrentUser();
-    if (!currentUser) {
-      navigate("/signin");
-    }
-    if (!currentUser.emailVerification) {
-      await authService.createUserVerification();
-      await authService.deleteSession();
-      navigate("/signin");
-    }
-
-    if (currentUser.emailVerification) {
-      navigate("/homepage");
-    }
-
     const isValidEmail = validateEmailWithRegex(formDataObject.email);
     setEmailError(!isValidEmail);
     //
+
+    if (isValidEmail) {
+      await authService.createSession({
+        email: formDataObject.email,
+        password: formDataObject.password,
+      });
+
+      const currentUser = await authService.getCurrentUser();
+      if (!currentUser) {
+        navigate("/signin");
+      }
+      if (!currentUser.emailVerification) {
+        await authService.createUserVerification();
+        await authService.deleteSession();
+        navigate("/signin");
+      }
+
+      if (currentUser.emailVerification) {
+        navigate("/homepage");
+      }
+    }
   };
 
   return (
