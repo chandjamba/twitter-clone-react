@@ -13,11 +13,13 @@ function App() {
         <Routes>
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/signin" element={<SignInPage />} />
-          <AuthContextProvider>
+        </Routes>
+        <AuthContextProvider>
+          <Routes>
             <Route path="/verify-email" element={<EmailVerificationPage />} />
             <Route path="/homepage" element={<Homepage />} />
-          </AuthContextProvider>
-        </Routes>
+          </Routes>
+        </AuthContextProvider>
       </main>
     </BrowserRouter>
   );
