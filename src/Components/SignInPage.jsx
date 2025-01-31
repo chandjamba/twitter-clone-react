@@ -21,15 +21,6 @@ export default function SignInPage() {
     const formData = new FormData(event.target);
     const formDataEntries = formData.entries();
     const formDataObject = Object.fromEntries(formDataEntries);
-<<<<<<< HEAD
-    await authService.createSession({
-      email: formDataObject.email,
-      password: formDataObject.password,
-    });
-    
-
-=======
->>>>>>> main
     const isValidEmail = validateEmailWithRegex(formDataObject.email);
     setEmailError(!isValidEmail);
     //
