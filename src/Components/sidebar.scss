@@ -1,7 +1,8 @@
 @import "../styles/main.scss";
 
 .sidebar {
-  flex: 0 0 250px;
+  display: flex;
+  flex-direction: column;
   padding: 20px 0;
   color: $text-color;
 }
