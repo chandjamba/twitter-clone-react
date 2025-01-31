@@ -1,0 +1,57 @@
+.sidebar {
+  flex: 0 0 250px;
+  padding: 20px 0;
+}
+
+.sidebar-content {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.logo {
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+.twitter-icon {
+  color: #1da1f2;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  padding: 10px;
+  font-size: 20px;
+  color: #000;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background-color: rgba(29, 161, 242, 0.1);
+  color: #1da1f2;
+  border-radius: 30px;
+}
+
+.tweet-btn {
+  margin-top: 20px;
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.tweet-btn:hover {
+  background-color: #1a91da;
+}
