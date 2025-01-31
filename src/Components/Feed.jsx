@@ -34,19 +34,61 @@ export default function Feed() {
       content:
         "Any good resources for mastering CSS Grid and Flexbox? #CSSHelp",
     },
+    {
+      id: 5,
+      username: "User5",
+      handle: "@user5",
+      content:
+        "Any good resources for mastering CSS Grid and Flexbox? #CSSHelp",
+    },
+    {
+      id: 5,
+      username: "User5",
+      handle: "@user5",
+      content:
+        "Any good resources for mastering CSS Grid and Flexbox? #CSSHelp",
+    },
+    {
+      id: 5,
+      username: "User5",
+      handle: "@user5",
+      content:
+        "Any good resources for mastering CSS Grid and Flexbox? #CSSHelp",
+    },
+    {
+      id: 5,
+      username: "User5",
+      handle: "@user5",
+      content:
+        "Any good resources for mastering CSS Grid and Flexbox? #CSSHelp",
+    },
+    {
+      id: 5,
+      username: "User5",
+      handle: "@user5",
+      content:
+        "Any good resources for mastering CSS Grid and Flexbox? #CSSHelp",
+    },
+    {
+      id: 5,
+      username: "User5",
+      handle: "@user5",
+      content:
+        "Any good resources for mastering CSS Grid and Flexbox? #CSSHelp",
+    },
   ];
 
   return (
     <div className="feed">
       <div className="tweet-box">
-        <textarea placeholder="What's happening?" />
+        <textarea className="tweet-textarea" placeholder="What's happening?" />
         <button className="tweet-btn">Tweet</button>
       </div>
       <div className="tweets">
         {tweets.map((tweet) => (
           <div key={tweet.id} className="tweet">
             <img
-              src={`https://via.placeholder.com/48`}
+              src={`https://cdn-icons-png.flaticon.com/128/924/924915.png`}
               alt="avatar"
               className="avatar"
             />

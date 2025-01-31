@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar";
 import Feed from "./Feed";
 export default function Homepage() {
   return (
-    <div>
+    <div className="homepage">
       <Sidebar />
       <Feed />
     </div>

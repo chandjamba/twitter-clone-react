@@ -1,9 +1,10 @@
 @import "../styles/main.scss";
 .homepage {
-  height: 700px;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
   width: 100%;
   background-color: $black;
-  color: $primary-color;
-  font-size: $font-2xl;
-  @include flex(column, center, center);
+  color: $text-color;
+  justify-content: space-between;
 }

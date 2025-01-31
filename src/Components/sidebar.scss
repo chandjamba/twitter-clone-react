@@ -1,13 +1,16 @@
+@import "../styles/main.scss";
+
 .sidebar {
   flex: 0 0 250px;
   padding: 20px 0;
+  color: $text-color;
 }
 
 .sidebar-content {
-  position: fixed;
   display: flex;
   flex-direction: column;
   height: 100%;
+  margin: 0 0 0 25px;
 }
 
 .logo {
@@ -16,10 +19,11 @@
 }
 
 .twitter-icon {
-  color: #1da1f2;
   font-size: 30px;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
+  color: $text-color;
+  background-color: $text-color;
 }
 
 .sidebar-menu {
@@ -30,7 +34,7 @@
 .menu-item {
   padding: 10px;
   font-size: 20px;
-  color: #000;
+  color: $text-color;
   text-decoration: none;
 }
 
@@ -40,7 +44,7 @@
   border-radius: 30px;
 }
 
-.tweet-btn {
+.signout-btn {
   margin-top: 20px;
   background-color: #1da1f2;
   color: white;
@@ -52,6 +56,6 @@
   cursor: pointer;
 }
 
-.tweet-btn:hover {
+.signout-btn:hover {
   background-color: #1a91da;
 }

@@ -44,17 +44,17 @@ export function AuthContextProvider({ children }) {
         navigate("/signin");
         return;
       }
-      if (!location.pathname.startsWith("/verify-email")) {
-        if (!currentUser || !currentUser.emailVerification) {
-          await authService.deleteSession();
-          await authService.createUserVerification();
-          navigate("/signin");
-        }
-        if (currentUser) {
-          setCurrentLoggedInUser(currentUser);
-        }
-        return;
-      }
+      // if (!location.pathname.startsWith("/verify-email")) {
+      //   if (!currentUser || !currentUser.emailVerification) {
+      //     await authService.deleteSession();
+      //     await authService.createUserVerification();
+      //     navigate("/signin");
+      //   }
+      //   if (currentUser) {
+      //     setCurrentLoggedInUser(currentUser);
+      //   }
+      //   return;
+      // }
     }
     checkUserSession();
   }, []);
