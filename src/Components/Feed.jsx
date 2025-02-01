@@ -80,6 +80,7 @@ export default function Feed() {
 
   return (
     <div className="feed">
+      <div className="feed-home-heading">Home</div>
       <div className="tweet-box">
         <textarea className="tweet-textarea" placeholder="What's happening?" />
         <button className="tweet-btn">Tweet</button>
@@ -87,6 +88,7 @@ export default function Feed() {
       <div className="tweets">
         {tweets.map((tweet) => (
           <div key={tweet.id} className="tweet">
+            <div className="tweet-inner-wrapper">
             <img
               src={`https://cdn-icons-png.flaticon.com/128/924/924915.png`}
               alt="avatar"
@@ -104,6 +106,7 @@ export default function Feed() {
                 <button>Like</button>
                 <button>Share</button>
               </div>
+            </div>
             </div>
           </div>
         ))}
