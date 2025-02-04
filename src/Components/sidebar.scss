@@ -1,30 +1,20 @@
-@import "../styles/main.scss";
-
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  padding: 20px 0;
-  color: $text-color;
+  flex: 0 0 250px;
+  padding: 20px 10px;
+  background-color: white;
 }
 
 .sidebar-content {
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
-  margin: 0 0 0 25px;
 }
 
 .logo {
   margin-bottom: 20px;
   padding-left: 10px;
-}
-
-.twitter-icon {
-  font-size: 30px;
-  width: 50px;
-  height: 50px;
-  color: $text-color;
-  background-color: $text-color;
 }
 
 .sidebar-menu {
@@ -33,30 +23,76 @@
 }
 
 .menu-item {
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
   font-size: 20px;
-  color: $text-color;
+  color: #000;
   text-decoration: none;
+  border-radius: 30px;
+  transition: background-color 0.2s;
 }
 
 .menu-item:hover {
   background-color: rgba(29, 161, 242, 0.1);
   color: #1da1f2;
-  border-radius: 30px;
 }
 
-.signout-btn {
+.menu-item svg {
+  margin-right: 20px;
+}
+
+.tweet-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
   background-color: #1da1f2;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 30px;
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.signout-btn:hover {
+.tweet-btn:hover {
   background-color: #1a91da;
+}
+
+.tweet-btn svg {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .sidebar-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
+
+  .sidebar-menu {
+    display: none;
+  }
+
+  .tweet-btn {
+    margin-top: 0;
+    padding: 8px;
+  }
+
+  .tweet-btn-text {
+    display: none;
+  }
 }
