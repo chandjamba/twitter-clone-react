@@ -2,7 +2,6 @@ import { useState } from "react";
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { validatePasswordWithRegex } from "../lib/utils/validatePasswordWithRegex";
 import "./signUpPage.scss";
-import { Eye, EyeOff } from "lucide-react";
 import { authService } from "../lib/appwrite/services/auth.service";
 import { APPWRITE_CONFIG } from "../lib/appwrite/config";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +17,7 @@ export default function SignUpPage() {
   function togglePassword() {
     setShowPassword(!showPassword);
   }
+  // IsLogin or not handler //
 
   // Create Form SignUp submit button handler to access the all form data in once. //
   const signUpButtonHandler = async (event) => {
@@ -64,71 +64,51 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="signUp">
-      <form className="signUp__form" onSubmit={signUpButtonHandler}>
-        <div className="signUp__wrapper">
-          <h1>Create your account</h1>
-          <div className="signUp__name-input-box">
-            <div className="signUp__name-input-inner-box">
-              <input
-                className="signUp__name-input"
-                type="text"
-                name="name"
-                placeholder="Name"
-                required
-              />
-            </div>
+    <div className="container">
+      <div className="auth-container">
+        <form onSubmit={signUpButtonHandler} className="auth-form">
+          <div className="auth-header">
+            <svg viewBox="0 0 24 24" className="twitter-icon">
+              <g>
+                <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path>
+              </g>
+            </svg>
+          </div>
+          <h1>{"Join Twitter today"}</h1>
 
-            {nameError && (
-              <p className="signUp__name-input-error">
-                Please enter name inside input
-              </p>
-            )}
+          <div className="form-group">
+            <input type="text" name="name" placeholder="Name" required />
           </div>
-          <div className="signUp__email-input-box">
-            <div className="signUp__email-input-inner-box">
-              <input
-                className="signUp__email-input"
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-              />
-            </div>
-            {emailError && (
-              <p className="signUp__email-input-error">
-                Please check your email !
-              </p>
-            )}
+          <p className="input-error">{nameError}</p>
+          <div className="form-group">
+            <input type="email" name="email" placeholder="Email" required />
           </div>
-          <div className="signUp__password-input-box">
-            <div className="signUp__password-input-show-btn-inner-box">
-              <input
-                className="signUp__password-input"
-                type={showPassword ? "text" : "password"}
-                name="password"
-                placeholder="Password"
-                required
-              />
-              <button
-                className="signUp__show-password-btn"
-                onClick={togglePassword}
-                type="button"
-              >
-                {showPassword ? <EyeOff /> : <Eye />}
-              </button>
-            </div>
-            {passwordError && (
-              <p className="signUp__password-input-error">
-                Please check your password !
-              </p>
-            )}
+          <p className="input-error">{emailError}</p>
+
+          <div className="form-group">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
           </div>
-          <button className="signUp__submit-btn btn-primary" type="submit">
-            Sign Up
+          <p className="input-error">{passwordError}</p>
+
+          <button className="btn-primary" type="submit">
+            Sign up
           </button>
-        </div>
-      </form>
+          <p className="switch-text">
+            {"Already have an account?"}
+            <button
+              className="switch-button"
+              onClick={() => navigate("/signin")}
+            >
+              {"Sign in"}
+            </button>
+          </p>
+        </form>
+      </div>
     </div>
   );
 }
