@@ -4,8 +4,6 @@ import {
   User,
   Bell,
   Mail,
-  Bookmark,
-  FileText,
   MoreHorizontal,
   Twitter,
   Feather,
@@ -35,14 +33,7 @@ export default function Sidebar() {
             <Mail />
             <span className="menu-text">Messages</span>
           </a>
-          <a href="#" className="menu-item">
-            <Bookmark />
-            <span className="menu-text">Bookmarks</span>
-          </a>
-          <a href="#" className="menu-item">
-            <FileText />
-            <span className="menu-text">Lists</span>
-          </a>
+
           <a href="#" className="menu-item">
             <MoreHorizontal />
             <span className="menu-text">More</span>
