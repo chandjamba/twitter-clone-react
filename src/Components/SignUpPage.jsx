@@ -3,7 +3,6 @@ import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { validatePasswordWithRegex } from "../lib/utils/validatePasswordWithRegex";
 import "./signUpPage.scss";
 import { authService } from "../lib/appwrite/services/auth.service";
-import { APPWRITE_CONFIG } from "../lib/appwrite/config";
 import { useNavigate } from "react-router-dom";
 
 export default function SignUpPage() {
