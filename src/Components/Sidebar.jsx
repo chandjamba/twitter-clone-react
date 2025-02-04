@@ -18,29 +18,29 @@ export default function Sidebar() {
         </div>
         <nav className="sidebar-menu">
           <a href="#" className="menu-item">
-            <Home />
+            <Home className="item-logo" />
             <span className="menu-text">Home</span>
           </a>
           <a href="#" className="menu-item">
-            <User />
+            <User className="item-logo" />
             <span className="menu-text">Profile</span>
           </a>
           <a href="#" className="menu-item">
-            <Bell />
+            <Bell className="item-logo" />
             <span className="menu-text">Notifications</span>
           </a>
           <a href="#" className="menu-item">
-            <Mail />
+            <Mail className="item-logo" />
             <span className="menu-text">Messages</span>
           </a>
 
           <a href="#" className="menu-item">
-            <MoreHorizontal />
+            <MoreHorizontal className="item-logo"/>
             <span className="menu-text">More</span>
           </a>
         </nav>
         <button className="tweet-btn">
-          <Feather size={18} />
+          <Feather size={18} className="item-logo"/>
           <span className="tweet-btn-text">Tweet</span>
         </button>
       </div>

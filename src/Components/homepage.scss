@@ -9,3 +9,14 @@
   color: $black;
   justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+  .homepage {
+    flex-direction: column;
+  }
+
+  .homepage {
+    border-left: none;
+    border-right: none;
+  }
+}

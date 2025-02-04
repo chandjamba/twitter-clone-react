@@ -83,7 +83,18 @@
   }
 
   .sidebar-menu {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+
+  .menu-item {
+    font-size: small;
+  }
+  .item-logo {
+    height: 20px;
   }
 
   .tweet-btn {
