@@ -1,4 +1,3 @@
-import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import "./signInPage.scss";
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
