@@ -8,12 +8,10 @@ body {
   }
   
   .twitter-profile {
-    max-width: 600px;
     margin: 0 auto;
+    height: 100%;
     background-color: #fff;
     min-height: 100vh;
-    border-left: 1px solid #e6ecf0;
-    border-right: 1px solid #e6ecf0;
   }
   
   .header {
@@ -26,6 +24,7 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
     z-index: 1000;
+    color: #0f1419;
   }
   
   .back-button {
@@ -38,12 +37,14 @@ body {
   .back-icon {
     width: 20px;
     height: 20px;
+    color: black;
   }
   
   .header-info h2 {
     font-size: 19px;
     font-weight: bold;
     margin: 0;
+    color: #0f1419;
   }
   
   .tweet-count {
@@ -81,15 +82,19 @@ body {
   }
   
   .edit-profile-button {
-    float: right;
-    margin-top: 10px;
-    padding: 10px 16px;
-    border: 1px solid #cfd9de;
-    border-radius: 9999px;
-    font-weight: bold;
-    background-color: #fff;
-    color: #0f1419;
-    cursor: pointer;
+    background-color: #1da1f2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  float: right;
+  margin-top: 10px;
+  cursor: pointer;
+  }
+
+  .edit-profile-button:hover {
+    background-color: #1a91da;
   }
   
   .profile-name {
@@ -97,6 +102,7 @@ body {
     font-weight: bold;
     margin-top: 60px;
     margin-bottom: 0;
+    color: #0f1419;
   }
   
   .profile-handle {
@@ -155,6 +161,7 @@ body {
   
   .tab-item:hover {
     background-color: rgba(15, 20, 25, 0.1);
+    color: #1da1f2;
   }
   
   .tab-item.active {

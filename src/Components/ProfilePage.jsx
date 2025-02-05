@@ -1,9 +1,34 @@
+import { ArrowLeft } from "lucide-react";
 import "./profilePage.scss"
 
 export default function ProfilePage() {
     const tweets = [
+      {
+        id: 1,
+        content: "Just launched my new React project! Check it out at https://example.com #ReactJS #WebDev",
+        timestamp: "2h",
+        replies: 5,
+        retweets: 12,
+        likes: 28,
+      },
+      {
+        id: 2,
+        content: "Excited to speak at the upcoming JavaScript conference! Who else is attending? #JSConf",
+        timestamp: "5h",
+        replies: 8,
+        retweets: 15,
+        likes: 45,
+      },
+      {
+        id: 4,
+        content: "What's your favorite CSS trick? Mine is using grid for responsive layouts! #CSS #WebDesign",
+        timestamp: "1d",
+        replies: 12,
+        retweets: 7,
+        likes: 36,
+      },
         {
-          id: 1,
+          id: 5,
           content: "Just launched my new React project! Check it out at https://example.com #ReactJS #WebDev",
           timestamp: "2h",
           replies: 5,
@@ -11,7 +36,7 @@ export default function ProfilePage() {
           likes: 28,
         },
         {
-          id: 2,
+          id: 6,
           content: "Excited to speak at the upcoming JavaScript conference! Who else is attending? #JSConf",
           timestamp: "5h",
           replies: 8,
@@ -19,7 +44,31 @@ export default function ProfilePage() {
           likes: 45,
         },
         {
-          id: 3,
+          id: 7,
+          content: "What's your favorite CSS trick? Mine is using grid for responsive layouts! #CSS #WebDesign",
+          timestamp: "1d",
+          replies: 12,
+          retweets: 7,
+          likes: 36,
+        },
+        {
+          id: 8,
+          content: "Just launched my new React project! Check it out at https://example.com #ReactJS #WebDev",
+          timestamp: "2h",
+          replies: 5,
+          retweets: 12,
+          likes: 28,
+        },
+        {
+          id: 9,
+          content: "Excited to speak at the upcoming JavaScript conference! Who else is attending? #JSConf",
+          timestamp: "5h",
+          replies: 8,
+          retweets: 15,
+          likes: 45,
+        },
+        {
+          id: 10,
           content: "What's your favorite CSS trick? Mine is using grid for responsive layouts! #CSS #WebDesign",
           timestamp: "1d",
           replies: 12,
@@ -31,11 +80,7 @@ export default function ProfilePage() {
         <div className="twitter-profile">
       <header className="header">
         <button className="back-button">
-          <svg viewBox="0 0 24 24" aria-hidden="true" className="back-icon">
-            <g>
-              <path d="M7.414 13l5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2H7.414z"></path>
-            </g>
-          </svg>
+        <ArrowLeft className="back-icon" />
         </button>
         <div className="header-info">
           <h2>John Doe</h2>
