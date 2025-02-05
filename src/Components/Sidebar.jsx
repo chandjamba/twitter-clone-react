@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./sidebar.scss";
 import {
   Home,
@@ -19,28 +20,28 @@ export default function Sidebar() {
         <nav className="sidebar-menu">
           <a href="#" className="menu-item">
             <Home className="item-logo" />
-            <span className="menu-text">Home</span>
+            <Link className="menu-text">Home</Link>
           </a>
           <a href="#" className="menu-item">
             <User className="item-logo" />
-            <span className="menu-text">Profile</span>
+            <Link className="menu-text">Profile</Link>
           </a>
           <a href="#" className="menu-item">
             <Bell className="item-logo" />
-            <span className="menu-text">Notifications</span>
+            <Link className="menu-text">Notifications</Link>
           </a>
           <a href="#" className="menu-item">
             <Mail className="item-logo" />
-            <span className="menu-text">Messages</span>
+            <Link className="menu-text">Messages</Link>
           </a>
 
           <a href="#" className="menu-item">
-            <MoreHorizontal className="item-logo"/>
-            <span className="menu-text">More</span>
+            <MoreHorizontal className="item-logo" />
+            <Link className="menu-text">More</Link>
           </a>
         </nav>
         <button className="tweet-btn">
-          <Feather size={18} className="item-logo"/>
+          <Feather size={18} className="item-logo" />
           <span className="tweet-btn-text">Tweet</span>
         </button>
       </div>
