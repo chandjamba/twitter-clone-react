@@ -1,4 +1,4 @@
-import "../styles/main.scss";
+import "../styles/main.scss"
 import "../lib/appwrite/services/auth.service";
 import { authService } from "../lib/appwrite/services/auth.service";
 import { useNavigate, useSearchParams } from "react-router-dom";
@@ -22,14 +22,15 @@ export default function EmailVerificationPage() {
   };
 
   return (
+    
     <div className="email-verification-container">
       <div className="email-verification-content">
-        <Twitter  className="twitter icon"/>
+        <Twitter  className="twitter-icon"/>
         <h1>Verify your email</h1>
         <p className="verification-text">
           You're almost there! We sent an email to
           <br />
-          <strong>{"email"}</strong>
+          <strong >{"Hello123@gmail.com"}</strong>
         </p>
         <p className="verification-instruction">
           Just click on the link in that email to complete your signup.

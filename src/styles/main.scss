@@ -5,171 +5,129 @@
 @import "layout";
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: #15202b;
+  color: #0f1419;
+}
+
+.email-verification-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.email-verification-content {
+  background-color: #192734;
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.twitter-icon {
+  width: 40px;
+  height: 40px;
+  fill: #1da1f2;
+  margin-bottom: 24px;
+  color: #1da1f2;
+}
+
+h1 {
+  font-size: 31px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.verification-text {
+  font-size: 15px;
+  line-height: 20px;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.verification-instruction {
+  font-size: 15px;
+  line-height: 20px;
+  margin-bottom: 24px;
+  color: white;
+}
+
+.verify-button {
+  background-color: #1da1f2;
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  max-width: 300px;
+}
+
+.verify-button:hover {
+  background-color: #1a91da;
+}
+
+.verify-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.resend-text {
+  margin-top: 16px;
+  font-size: 13px;
+  color: white;
+}
+
+.resend-button {
+  background: none;
+  border: none;
+  color: #1da1f2;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.resend-button:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .email-verification-content {
+    padding: 24px;
   }
-  
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-      "Droid Sans", "Helvetica Neue", sans-serif;
-    background-color: #15202b;
-    color: #ffffff;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-  }
-  
-  .auth-container {
-    background-color: #192734;
-    border-radius: 15px;
-    padding: 30px;
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .auth-header {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .twitter-icon {
-    width: 40px;
-    height: 40px;
-    fill: #1da1f2;
-    color: #1da1f2;
-  }
-  
+
   h1 {
     font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
   }
-  
-  .auth-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  input {
-    padding: 12px;
-    border: 1px solid #38444d;
-    border-radius: 5px;
-    background-color: #253341;
-    color: #ffffff;
-    font-size: 16px;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: #1da1f2;
-  }
-  
-  .auth-button {
-    background-color: #1da1f2;
-    color: #ffffff;
-    border: none;
-    border-radius: 50px;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .auth-button:hover {
-    background-color: #1991db;
-  }
-  
-  .auth-button:disabled {
-    background-color: #1da1f2;
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
-  .switch-text {
-    margin-top: 20px;
-    text-align: center;
+
+  .verification-text,
+  .verification-instruction {
     font-size: 14px;
   }
-  
-  .switch-button {
-    background: none;
-    border: none;
-    color: #1da1f2;
-    cursor: pointer;
+
+  .verify-button {
     font-size: 14px;
-    margin-left: 5px;
+    padding: 10px 20px;
   }
-  
-  .confirm-email-container {
-    text-align: center;
-  }
-  
-  .confirm-email-text {
-    margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  .resend-email-text {
-    margin-top: 20px;
-    font-size: 14px;
-  }
-  
+
+  .resend-text,
   .resend-button {
-    background: none;
-    border: none;
-    color: #1da1f2;
-    cursor: pointer;
-    font-size: 14px;
-    text-decoration: underline;
+    font-size: 12px;
   }
-  
-  .not-found-container {
-    text-align: center;
-  }
-  
-  .not-found-text {
-    margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  @media (max-width: 480px) {
-    .auth-container {
-      padding: 20px;
-    }
-  
-    h1 {
-      font-size: 20px;
-    }
-  
-    input,
-    .auth-button {
-      font-size: 14px;
-    }
-  
-    .confirm-email-text,
-    .not-found-text {
-      font-size: 14px;
-    }
-  
-    .resend-email-text {
-      font-size: 12px;
-    }
-  }
-  
-  
+}
+
