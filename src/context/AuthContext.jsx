@@ -17,7 +17,7 @@ export function AuthContextProvider({ children }) {
   // if url contains /verifyEmail then check of user session exist  if not send to login page else check email verified is false if its false do not navigate anywhere let the page open
   useEffect(() => {
     async function checkUserSession() {
-        // const currentUser = await authService.getCurrentUser();
+        const currentUser = await authService.getCurrentUser();
         // To do : need to optimize these all conditions.
       if (
         location.pathname.startsWith("/verify-email") &&
