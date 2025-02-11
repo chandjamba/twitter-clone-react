@@ -1,0 +1,62 @@
+@import "../styles/main.scss";
+.email-verification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  &-content {
+    background-color: #192734;
+    border-radius: 16px;
+    padding: 32px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  &-text {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 12px;
+    color: white;
+  }
+  &-instruction {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 24px;
+    color: white;
+  }
+  &-resend-text {
+    margin-top: 16px;
+    font-size: 13px;
+    color: white;
+  }
+
+  &-resend-button {
+    background: none;
+    border: none;
+    color: #1da1f2;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  &-resend-button:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 480px) {
+  .email-verification-content {
+    padding: 24px;
+    &-verification-text,
+    &-verification-instruction {
+      font-size: 14px;
+    }
+
+    &-resend-text,
+    &-resend-button {
+      font-size: 12px;
+    }
+  }
+}

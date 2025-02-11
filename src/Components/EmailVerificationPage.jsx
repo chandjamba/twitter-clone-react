@@ -1,4 +1,5 @@
-import "../styles/main.scss"
+import "../styles/main.scss";
+import "./emailVerificationPage.scss";
 import "../lib/appwrite/services/auth.service";
 import { authService } from "../lib/appwrite/services/auth.service";
 import { useNavigate, useSearchParams } from "react-router-dom";
@@ -17,32 +18,32 @@ export default function EmailVerificationPage() {
     navigate("/signin");
   };
 
-  const onResendEmail = async() => {
-    await authService.createUserVerification(APPWRITE_CONFIG.sendVerificationEmailUrl);
+  const onResendEmail = async () => {
+    await authService.createUserVerification();
   };
 
   return (
-    
-    <div className="email-verification-container">
+    <div className="email-verification">
       <div className="email-verification-content">
-        <Twitter  className="twitter-icon"/>
+        <Twitter className="twitter-icon" />
         <h1>Verify your email</h1>
-        <p className="verification-text">
+        <p className="email-verification-text">
           You're almost there! We sent an email to
           <br />
-          <strong >{"Hello123@gmail.com"}</strong>
+          <strong>{"Hello123@gmail.com"}</strong>
         </p>
-        <p className="verification-instruction">
+        <p className="email-verification-instruction">
           Just click on the link in that email to complete your signup.
           <br />
-          If you don't see it, you may need to <strong>check after few seconds.</strong>
+          If you don't see it, you may need to
+          <strong>check after few seconds.</strong>
         </p>
-        <button className="verify-button" onClick={verifyEmailHandler}>
-          {"Verify email"}
+        <button className="btn-secondary" onClick={verifyEmailHandler}>
+          Verify email
         </button>
-        <p className="resend-text">
-          Didn't receive the email?{" "}
-          <button className="resend-button" onClick={onResendEmail}>
+        <p className="email-verification-resend-text">
+          Didn't receive the email?
+          <button className="email-verification-resend-button" onClick={onResendEmail}>
             Click to resend
           </button>
         </p>
