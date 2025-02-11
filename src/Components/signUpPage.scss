@@ -1,171 +1,82 @@
 @import "../styles/main.scss";
 .signUp {
-  height: 700px;
-  width: 100%;
-  background-color: $black;
-  @include flex(column, center, center);
-  &__form {
-    @include flex(column, center, center);
-    width: 400px;
-    height: 500px;
-  }
-  &__wrapper {
-    @include flex(column, space-around, center);
-    width: 450px;
-    height: 100%;
-    background-color: $background-color;
-    border: 1px solid $border-color;
-    border-radius: $radius-sm;
-    padding: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  &-auth-container {
+    background-color: #192734;
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
   }
 
-  &__wrapper h1 {
-    text-align: left;
-    color: $text-color;
-    font-size: $font-xl;
+  &-auth-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
   }
-  &__name-input-box {
-    @include flex(column, space-around, center);
-    width: 95%;
-    height: 60px;
+  &-auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
-  &__name-input-inner-box {
-    @include flex(column, space-around, center);
-    width: 100%;
-    height: 60px;
-    border: 1px solid $border-color;
-    border-radius: $radius-sm;
+
+  &-form-group {
+    display: flex;
+    flex-direction: column;
   }
-  &__name-input {
-    width: 100%;
-    height: 60px;
-    padding: 16px;
-    border: 1px solid $border-color;
-    border-radius: $radius-sm;
+
+  &-input {
+    padding: 12px;
+    border: 1px solid #38444d;
+    border-radius: 5px;
+    background-color: #253341;
+    color: #ffffff;
+    font-size: 16px;
+  }
+
+  &-input:focus {
     outline: none;
-    text-align: left;
-    font-weight: 500;
-    color: $text-color;
-    background-color: $input-background-color;
+    border-color: #1da1f2;
   }
-  &__name-input:hover {
-    border: 2px solid $primary-color;
-    color: $text-color;
-  }
-
-  &__name-input:hover::placeholder {
-    color: $primary-color;
-  }
-  &__name-input-error {
-    color: $error-color;
-    font-size: $font-xs;
-    margin: 4px;
-  }
-  &__email-input-box {
-    @include flex(column, space-around, center);
-    width: 95%;
-    height: 60px;
-  }
-  &__email-input-inner-box {
-    @include flex(column, space-around, center);
-    width: 100%;
-    height: 60px;
-    border: 1px solid $border-color;
-    border-radius: $radius-sm;
-  }
-  &__email-input {
-    width: 100%;
-    height: 60px;
-    padding: 16px;
-    border: 1px solid $border-color;
-    border-radius: $radius-sm;
-    outline: none;
-    text-align: left;
-    font-weight: 500;
-    color: $text-color;
-    background-color: $input-background-color;
-  }
-  &__email-input:hover {
-    border: 2px solid $primary-color;
-    color: $text-color;
+  &-auth-button {
+    background-color: #1da1f2;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
   }
 
-  &__email-input:hover::placeholder {
-    color: $primary-color;
-  }
-  &__email-input-error {
-    color: $error-color;
-    font-size: $font-xs;
-    margin: 4px;
-  }
-  &__password-input-box {
-    @include flex(column, space-around, center);
-    width: 95%;
-    height: 60px;
-    border-radius: $radius-sm;
-  }
-  &__password-input-box:hover {
-    border: 2px solid $primary-color;
-    color: $text-color;
-  }
-  &__password-input-show-btn-inner-box {
-    @include flex(space-around, center);
-    width: 100%;
-    height: 60px;
-    border: 1px solid $border-color;
-    border-radius: $radius-sm;
-  }
-  &__password-input {
-    width: 90%;
-    height: 60px;
-    padding: 16px;
-    border-left: 1px solid $border-color;
-    border-top: 1px solid $border-color;
-    border-right: none;
-    border-bottom: 1px solid $border-color;
-    border-top-left-radius: $radius-sm;
-    border-bottom-left-radius: $radius-sm;
-    outline: none;
-    text-align: left;
-    font-weight: 500;
-    color: $text-color;
-    background-color: $input-background-color;
+  &-auth-button:hover {
+    background-color: #1991db;
   }
 
-  &__password-input:hover::placeholder {
-    color: $primary-color;
-  }
-  &__password-input-error {
-    color: $error-color;
-    font-size: $font-xs;
-    margin: 4px;
+  &-auth-button:disabled {
+    background-color: #1da1f2;
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 
-  /* Buttons Styling */
-  &__show-password-btn {
-    width: 20%;
-    height: 60px;
-    padding: 16px;
-    border-left: none;
-    border-top: 1px solid $border-color;
-    border-right: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
-    border-top-right-radius: $radius-sm;
-    border-bottom-right-radius: $radius-sm;
-    outline: none;
-    text-align: right;
-    font-weight: 500;
-    color: $gray-dark;
-    background-color: $input-background-color;
+  &-switch-text {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
   }
 
-  &__show-password-btn:hover {
-    color: $text-color;
-  }
-
-  &__submit-btn:hover {
-    background-color: $primary-color;
-    border-color: $primary-color;
-    color: $text-color;
+  &-switch-button {
+    background: none;
+    border: none;
+    color: #1da1f2;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 5px;
+    text-decoration: none;
   }
 }

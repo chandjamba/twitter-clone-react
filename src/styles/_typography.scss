@@ -11,6 +11,7 @@ h1 {
   margin-bottom: 10px;
   text-align: center;
 }
+
 h2 {
   @include heading-styles;
   font-size: $font-xl;
