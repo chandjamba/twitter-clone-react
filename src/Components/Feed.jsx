@@ -86,34 +86,34 @@ export default function Feed() {
   return (
     <div className="feed">
       <div className="feed-header">
-        <h2>Home</h2>
+        <h2 className="feed-h2">Home</h2>
       </div>
-      <div className="tweet-box">
+      <div className="feed-tweet-box">
         <img
           src="https://i.pravatar.cc/48?img=0"
           alt="avatar"
-          className="avatar"
+          className="feed-avatar"
         />
-        <div className="tweet-input">
-          <textarea placeholder="What's happening?" />
-          <button className="tweet-btn">Tweet</button>
+        <div className="feed-tweet-input">
+          <textarea className="feed-textarea" placeholder="What's happening?" />
+          <button className="feed-tweet-btn">Tweet</button>
         </div>
       </div>
-      <div className="tweets">
+      <div className="feed-tweets">
         {tweets.map((tweet) => (
-          <div key={tweet.id} className="tweet">
+          <div key={tweet.id} className="feed-tweet">
             <img
               src={tweet.avatar || "/placeholder.svg"}
               alt="avatar"
-              className="avatar"
+              className="feed-avatar"
             />
-            <div className="tweet-content">
-              <div className="tweet-header">
-                <span className="username">{tweet.username}</span>
-                <span className="handle">{tweet.handle}</span>
+            <div className="feed-tweet-content">
+              <div className="feed-tweet-header">
+                <span className="feed-username">{tweet.username}</span>
+                <span className="feed-handle">{tweet.handle}</span>
               </div>
               <p>{tweet.content}</p>
-              <div className="tweet-actions">
+              <div className="feed-tweet-actions">
                 <button>
                   <MessageCircle size={18} /> Comment
                 </button>
