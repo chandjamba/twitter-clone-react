@@ -1,4 +1,4 @@
-import "../styles/main.scss";
+import "./signInPage.scss";
 import { useState } from "react";
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { authService } from "../lib/appwrite/services/auth.service";
@@ -48,31 +48,38 @@ export default function SignInPage() {
   };
 
   return (
-    <div className="container">
-      <div className="auth-container">
-        <form onSubmit={signInButtonHandler} className="auth-form">
-          <div className="auth-header">
+    <div className="signIn">
+      <div className="signIn-auth-container">
+        <form onSubmit={signInButtonHandler} className="signIn-auth-form">
+          <div className="signIn-auth-header">
             <Twitter className="twitter-icon"></Twitter>
           </div>
-          <h1>{"Log in to Twitter"}</h1>
-          <div className="form-group">
-            <input type="email" name="email" placeholder="Email" required />
-          </div>
-          <div className="form-group">
+          <h1>Log in to Twitter</h1>
+          <div className="signIn-form-group">
             <input
+              className="signIn-input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div className="signIn-form-group">
+            <input
+              className="signIn-input"
               type="password"
               name="password"
               placeholder="Password"
               required
             />
           </div>
-          <button className="btn-primary" type="submit">
+          <button className="signIn-submit-button" type="submit">
             Log in
           </button>
-          <p className="switch-text">
-            {"Don't have an account?"}
-            <Link to={"/signup"} className="switch-button">
-              {"Sign up"}
+          <p className="signIn-switch-text">
+            Don't have an account?
+            <Link to={"/signup"} className="signIn-switch-button">
+              Sign up
             </Link>
           </p>
         </form>

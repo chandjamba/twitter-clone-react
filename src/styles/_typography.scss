@@ -1,27 +1,29 @@
 @mixin heading-styles {
-    font-weight: 700;
-    line-height: 1.2;
-    color: $text-color;
-  }
-  
-  h1 {
-    @include heading-styles;
-    font-size: $font-2xl;
-  }
-  
-  h2 {
-    @include heading-styles;
-    font-size: $font-xl;
-  }
-  
-  .text-sm {
-    font-size: $font-sm;
-  }
-  
-  .text-base {
-    font-size: $font-base;
-  }
-  
-  .text-gray {
-    color: $gray-dark;
-  }
+  font-weight: 700;
+  line-height: 1.2;
+  color: $text-color;
+}
+
+h1 {
+  @include heading-styles;
+  font-size: $font-2xl;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+h2 {
+  @include heading-styles;
+  font-size: $font-xl;
+}
+
+.text-sm {
+  font-size: $font-sm;
+}
+
+.text-base {
+  font-size: $font-base;
+}
+
+.text-gray {
+  color: $gray-dark;
+}

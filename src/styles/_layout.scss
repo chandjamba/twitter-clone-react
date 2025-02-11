@@ -1,3 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: #15202b;
+  color: #ffffff;
+}
+.twitter-icon {
+  width: 40px;
+  height: 40px;
+  color: #1da1f2;
+  fill: #1da1f2;
+}
+
 .container {
   width: 100%;
   margin-left: auto;
@@ -16,16 +36,4 @@
   @include respond-to("lg") {
     max-width: map-get($breakpoints, "lg");
   }
-}
-*,
-body,
-html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-}
-img {
-  width: 100%;
-  height: 100%;
 }
