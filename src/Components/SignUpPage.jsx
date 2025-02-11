@@ -1,4 +1,4 @@
-import "../styles/main.scss";
+import "./signUpPage.scss";
 import { useState } from "react";
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { validatePasswordWithRegex } from "../lib/utils/validatePasswordWithRegex";
@@ -64,43 +64,56 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="container">
-      <div className="auth-container">
-        <form onSubmit={signUpButtonHandler} className="auth-form">
-          <div className="auth-header">
+    <div className="signUp">
+      <div className="signUp-auth-container">
+        <form onSubmit={signUpButtonHandler} className="signUp-auth-form">
+          <div className="signUp-auth-header">
             <Twitter className="twitter-icon" />
           </div>
-          <h1>{"Join Twitter today"}</h1>
+          <h1>Join Twitter today</h1>
 
-          <div className="form-group">
-            <input type="text" name="name" placeholder="Name" required />
-          </div>
-          <p className="input-error">{nameError}</p>
-          <div className="form-group">
-            <input type="email" name="email" placeholder="Email" required />
-          </div>
-          <p className="input-error">{emailError}</p>
-
-          <div className="form-group">
+          <div className="signUp-form-group">
             <input
+              className="signUp-input"
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+            />
+          </div>
+          <p className="signUp-input-error">{nameError}</p>
+          <div className="signUp-form-group">
+            <input
+              className="signUp-input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <p className="signUp-input-error">{emailError}</p>
+
+          <div className="signUp-form-group">
+            <input
+              className="signUp-input"
               type="password"
               name="password"
               placeholder="Password"
               required
             />
           </div>
-          <p className="input-error">{passwordError}</p>
+          <p className="signUp-input-error">{passwordError}</p>
 
           <button className="btn-primary" type="submit">
             Sign up
           </button>
-          <p className="switch-text">
-            {"Already have an account?"}
+          <p className="signUp-switch-text">
+            Already have an account?
             <button
-              className="switch-button"
+              className="signUp-switch-button"
               onClick={() => navigate("/signin")}
             >
-              {"Sign in"}
+              Sign in
             </button>
           </p>
         </form>

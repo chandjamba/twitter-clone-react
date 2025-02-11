@@ -5,7 +5,6 @@ import EmailVerificationPage from "./Components/EmailVerificationPage";
 import Homepage from "./Components/Homepage";
 import { AuthContextProvider } from "./context/AuthContext.jsx";
 import "./styles/main.scss";
-import "./styles/styles.scss";
 
 function App() {
   return (
