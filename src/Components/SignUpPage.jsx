@@ -3,7 +3,7 @@ import { useState } from "react";
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { validatePasswordWithRegex } from "../lib/utils/validatePasswordWithRegex";
 import { authService } from "../lib/appwrite/services/auth.service";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Twitter } from "lucide-react";
 
 export default function SignUpPage() {
@@ -109,12 +109,12 @@ export default function SignUpPage() {
           </button>
           <p className="signUp-switch-text">
             Already have an account?
-            <button
+            <Link
               className="signUp-switch-button"
-              onClick={() => navigate("/signin")}
+              to={"/signin"}
             >
               Sign in
-            </button>
+            </Link>
           </p>
         </form>
       </div>
