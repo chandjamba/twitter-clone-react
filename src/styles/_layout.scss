@@ -16,11 +16,13 @@ body {
   color: #1da1f2;
 }
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $spacing-md;
-  padding-right: $spacing-md;
+  margin: 0 auto;
 
   @include respond-to("sm") {
     max-width: map-get($breakpoints, "sm");
