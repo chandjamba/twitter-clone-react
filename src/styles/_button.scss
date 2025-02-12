@@ -17,7 +17,7 @@
     @include button-base;
     background-color: $primary-color;
     color: white;
-    
+    text-decoration: none;
     &:hover:not(:disabled) {
       background-color: darken($primary-color, 10%);
     }

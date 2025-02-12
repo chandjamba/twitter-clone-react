@@ -1,9 +1,9 @@
-import { Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
 import "./signInPage.scss";
+import { useState } from "react";
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { authService } from "../lib/appwrite/services/auth.service";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { Twitter } from "lucide-react";
 
 export default function SignInPage() {
   const navigate = useNavigate();
@@ -21,12 +21,6 @@ export default function SignInPage() {
     const formData = new FormData(event.target);
     const formDataEntries = formData.entries();
     const formDataObject = Object.fromEntries(formDataEntries);
-    await authService.createSession({
-      email: formDataObject.email,
-      password: formDataObject.password,
-    });
-    
-
     const isValidEmail = validateEmailWithRegex(formDataObject.email);
     setEmailError(!isValidEmail);
     //
@@ -55,48 +49,41 @@ export default function SignInPage() {
 
   return (
     <div className="signIn">
-      <form className="signIn__form" onSubmit={signInButtonHandler}>
-        <div className="signIn__wrapper">
-          <h1>Sign In</h1>
-          <div className="signIn__email-input-box">
-            <div className="signIn__email-input-inner-box">
-              <input
-                className="signIn__email-input"
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-              />
-            </div>
-            {emailError && (
-              <p className="signIn__email-input-error">
-                Please check your email !
-              </p>
-            )}
+      <div className="signIn-auth-container">
+        <form onSubmit={signInButtonHandler} className="signIn-auth-form">
+          <div className="signIn-auth-header">
+            <Twitter className="twitter-icon"></Twitter>
           </div>
-          <div className="signIn__password-input-box">
-            <div className="signIn__password-input-show-btn-inner-box">
-              <input
-                className="signIn__password-input"
-                type={showPassword ? "text" : "password"}
-                name="password"
-                placeholder="Password"
-                required
-              />
-              <button
-                className="signIn__show-password-btn"
-                onClick={togglePassword}
-                type="button"
-              >
-                {showPassword ? <EyeOff /> : <Eye />}
-              </button>
-            </div>
+          <h1>Log in to Twitter</h1>
+          <div className="signIn-form-group">
+            <input
+              className="signIn-input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
           </div>
-          <button className="signIn__submit-btn btn-primary" type="submit">
-            Sign In
+          <div className="signIn-form-group">
+            <input
+              className="signIn-input"
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button className="signIn-submit-button" type="submit">
+            Log in
           </button>
-        </div>
-      </form>
+          <p className="signIn-switch-text">
+            Don't have an account?
+            <Link to={"/signup"} className="signIn-switch-button">
+              Sign up
+            </Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 }
