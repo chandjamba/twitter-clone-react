@@ -18,27 +18,27 @@ export default function Sidebar() {
           <Twitter size={30} color="#1da1f2" />
         </div>
         <nav className="sidebar-menu">
-          <a href="#" className="menu-item">
+          <div className="menu-item">
             <Home className="item-logo" />
             <Link className="menu-text">Home</Link>
-          </a>
-          <a href="#" className="menu-item">
+          </div>
+          <div className="menu-item">
             <User className="item-logo" />
             <Link className="menu-text">Profile</Link>
-          </a>
-          <a href="#" className="menu-item">
+          </div>
+          <div className="menu-item">
             <Bell className="item-logo" />
             <Link className="menu-text">Notifications</Link>
-          </a>
-          <a href="#" className="menu-item">
+          </div>
+          <div className="menu-item">
             <Mail className="item-logo" />
             <Link className="menu-text">Messages</Link>
-          </a>
+          </div>
 
-          <a href="#" className="menu-item">
+          <div className="menu-item">
             <MoreHorizontal className="item-logo" />
             <Link className="menu-text">More</Link>
-          </a>
+          </div>
         </nav>
         <button className="tweet-btn">
           <Feather size={18} className="item-logo" />
