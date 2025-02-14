@@ -8,7 +8,7 @@ export const useAuthContext = () => {
   return useContext(AuthContext);
 };
 export function AuthContextProvider({ children }) {
-  const [currentLoggedInUser, setCurrentLoggedInUser] = useState();
+  // const [currentLoggedInUser, setCurrentLoggedInUser] = useState();
   const navigate = useNavigate();
   const location = useLocation();
   const [params] = useSearchParams();
