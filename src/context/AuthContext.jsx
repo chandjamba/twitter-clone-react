@@ -48,8 +48,7 @@ export function AuthContextProvider({ children }) {
         if (!currentUser || !currentUser.emailVerification) {
           await authService.deleteSession();
           await authService.createUserVerification();
-
-          navigate("/signin");  
+          navigate("/signin");
         }
         if (currentUser) {
           setCurrentLoggedInUser(currentUser);
