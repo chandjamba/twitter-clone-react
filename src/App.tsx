@@ -3,6 +3,7 @@ import SignUpPage from "./Components/SignUpPage";
 import SignInPage from "./Components/SignInPage";
 import EmailVerificationPage from "./Components/EmailVerificationPage";
 import Homepage from "./Components/Homepage";
+import ProfilePage from "./Components/ProfilePage"
 import { AuthContextProvider } from "./context/AuthContext.jsx";
 import NotFoundPage from "./Components/NotFoundPage";
 import "./styles/main.scss";
@@ -20,6 +21,8 @@ function App() {
           <Routes>
             <Route path="/verify-email" element={<EmailVerificationPage />} />
             <Route path="/homepage" element={<Homepage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+
           </Routes>
         </AuthContextProvider>
       </main>
