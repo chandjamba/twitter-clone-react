@@ -1,11 +1,10 @@
+import "./signUpPage.scss";
 import { useState } from "react";
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { validatePasswordWithRegex } from "../lib/utils/validatePasswordWithRegex";
-import "./signUpPage.scss";
-import { Eye, EyeOff } from "lucide-react";
 import { authService } from "../lib/appwrite/services/auth.service";
-import { APPWRITE_CONFIG } from "../lib/appwrite/config";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Twitter } from "lucide-react";
 
 export default function SignUpPage() {
   const navigate = useNavigate();
@@ -18,6 +17,7 @@ export default function SignUpPage() {
   function togglePassword() {
     setShowPassword(!showPassword);
   }
+  // IsLogin or not handler //
 
   // Create Form SignUp submit button handler to access the all form data in once. //
   const signUpButtonHandler = async (event) => {
@@ -65,70 +65,59 @@ export default function SignUpPage() {
 
   return (
     <div className="signUp">
-      <form className="signUp__form" onSubmit={signUpButtonHandler}>
-        <div className="signUp__wrapper">
-          <h1>Create your account</h1>
-          <div className="signUp__name-input-box">
-            <div className="signUp__name-input-inner-box">
-              <input
-                className="signUp__name-input"
-                type="text"
-                name="name"
-                placeholder="Name"
-                required
-              />
-            </div>
+      <div className="signUp-auth-container">
+        <form onSubmit={signUpButtonHandler} className="signUp-auth-form">
+          <div className="signUp-auth-header">
+            <Twitter className="twitter-icon" />
+          </div>
+          <h1>Join Twitter today</h1>
 
-            {nameError && (
-              <p className="signUp__name-input-error">
-                Please enter name inside input
-              </p>
-            )}
+          <div className="signUp-form-group">
+            <input
+              className="signUp-input"
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+            />
           </div>
-          <div className="signUp__email-input-box">
-            <div className="signUp__email-input-inner-box">
-              <input
-                className="signUp__email-input"
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-              />
-            </div>
-            {emailError && (
-              <p className="signUp__email-input-error">
-                Please check your email !
-              </p>
-            )}
+          <p className="signUp-input-error">{nameError}</p>
+          <div className="signUp-form-group">
+            <input
+              className="signUp-input"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+            />
           </div>
-          <div className="signUp__password-input-box">
-            <div className="signUp__password-input-show-btn-inner-box">
-              <input
-                className="signUp__password-input"
-                type={showPassword ? "text" : "password"}
-                name="password"
-                placeholder="Password"
-                required
-              />
-              <button
-                className="signUp__show-password-btn"
-                onClick={togglePassword}
-                type="button"
-              >
-                {showPassword ? <EyeOff /> : <Eye />}
-              </button>
-            </div>
-            {passwordError && (
-              <p className="signUp__password-input-error">
-                Please check your password !
-              </p>
-            )}
+          <p className="signUp-input-error">{emailError}</p>
+
+          <div className="signUp-form-group">
+            <input
+              className="signUp-input"
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
           </div>
-          <button className="signUp__submit-btn btn-primary" type="submit">
-            Sign Up
+          <p className="signUp-input-error">{passwordError}</p>
+
+          <button className="btn-primary" type="submit">
+            Sign up
           </button>
-        </div>
-      </form>
+          <p className="signUp-switch-text">
+            Already have an account?
+            <Link
+              className="signUp-switch-button"
+              to={"/signin"}
+            >
+              Sign in
+            </Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 }
