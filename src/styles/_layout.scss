@@ -24,7 +24,9 @@ body {
   padding: 20px;
   width: 100%;
   margin: 0 auto;
+}
 
+.container {
   @include respond-to("sm") {
     max-width: map-get($breakpoints, "sm");
   }

@@ -1,7 +1,7 @@
 import "./emailVerificationPage.scss";
-import "../lib/appwrite/services/auth.service";
 import { authService } from "../lib/appwrite/services/auth.service";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { Twitter } from "lucide-react";
 
 export default function EmailVerificationPage() {
   const [params] = useSearchParams();
@@ -15,15 +15,22 @@ export default function EmailVerificationPage() {
   };
 
   return (
-    <div className="verifyEmail">
-      <div className="verifyEmail__inner-box">
-        <div className="verifyEmail__para-box">
-          <p className="verifyEmail__para">
-            Please click the below button for Email verification.
-          </p>
-        </div>
-        <button className="verifyEmail__btn" onClick={verifyEmailHandler}>
-          Verify Email
+    <div className="email-verification">
+      <div className="email-verification-content">
+        <Twitter className="twitter-icon" />
+        <h1>Verify your email</h1>
+        <p className="email-verification-text">
+          You're almost there!
+          <br />
+        </p>
+        <p className="email-verification-instruction">
+          Just click on the button to complete your signup.
+          <br />
+          If you don't see it, you may need to
+          <strong> check after few seconds.</strong>
+        </p>
+        <button className="btn-secondary" onClick={verifyEmailHandler}>
+          Verify email
         </button>
       </div>
     </div>

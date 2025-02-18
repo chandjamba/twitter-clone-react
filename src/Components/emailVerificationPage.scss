@@ -1,47 +1,61 @@
-.verifyEmail {
+.email-verification {
   display: flex;
-  flex-direction: column;
-  height: 700px;
-  width: 100%;
-  align-items: center;
   justify-content: center;
-  background-color: #002244;
-  &__inner-box {
-    display: flex;
-    flex-direction: column;
-    height: 300px;
-    width: 50%;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(182, 178, 178, 0.2);
-    border: 1px solid rgba(182, 178, 178, 0.2);
-    border-radius: 5px;
-  }
-  &__para-box {
-    display: flex;
-    height: 50px;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  &-content {
+    background-color: #192734;
+    border-radius: 16px;
+    padding: 32px;
     width: 100%;
-    align-items: center;
-    justify-content: center;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  &__para {
-    color: white;
-    font-size: large;
-  }
-  &__btn {
-    display: flex;
-    height: 30px;
-    width: 100px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(182, 178, 178, 0.2);
-    border-radius: 5px;
-    background-color: rgba(182, 178, 178, 0.2);
+  &-text {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 12px;
     color: white;
   }
-  &__btn:hover {
-    border-color: white;
-    background-color: white;
-    color: black;
+  &-instruction {
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 24px;
+    color: white;
+  }
+  &-resend-text {
+    margin-top: 16px;
+    font-size: 13px;
+    color: white;
+  }
+
+  &-resend-button {
+    background: none;
+    border: none;
+    color: #1da1f2;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  &-resend-button:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 480px) {
+  .email-verification-content {
+    padding: 24px;
+    &-verification-text,
+    &-verification-instruction {
+      font-size: 14px;
+    }
+
+    &-resend-text,
+    &-resend-button {
+      font-size: 12px;
+    }
   }
 }
