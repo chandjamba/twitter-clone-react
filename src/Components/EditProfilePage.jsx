@@ -1,22 +1,25 @@
 import { Camera, X } from "lucide-react";
 import "./editProfilePage.scss";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function EditProfilePage() {
   const [name, setName] = useState();
+  const [username, setUsername] = useState();
   const [bio, setBio] = useState();
-  const [location, setLocation] = useState();
+  const [city, setCity] = useState();
+  const [country, setCountry] = useState();
   const [website, setWebsite] = useState();
 
   const handleSubmit = (e) => {
-    e.prevent.default();
+    
   };
   return (
     <div className="edit-profile">
       <header className="edit-profile-header">
-        <button className="edit-profile-close-button">
+        <Link to={"/profile"} className="edit-profile-close-button">
           <X className="edit-profile-icon" />
-        </button>
+        </Link>
         <h1 className="edit-profile-heading">Edit profile</h1>
         <button className="edit-profile-save-button" onClick={handleSubmit}>
           Save
@@ -57,7 +60,17 @@ export default function EditProfilePage() {
           />
           <span className="edit-profile-character-count">/50</span>
         </div>
-
+        <div className="edit-profile-form-group">
+          <label htmlFor="name">Username</label>
+          <input
+            className="edit-profile-input"
+            type="text"
+            value={username}
+            name="name"
+            maxLength="50"
+          />
+          <span className="edit-profile-character-count">/50</span>
+        </div>
         <div className="edit-profile-form-group">
           <label htmlFor="bio">Bio</label>
           <textarea
@@ -65,23 +78,32 @@ export default function EditProfilePage() {
             id="bio"
             value={bio}
             name="bio"
-            maxLength="160"
+            maxLength="200"
           ></textarea>
-          <span className="edit-profile-character-count">/160</span>
+          <span className="edit-profile-character-count">/200</span>
         </div>
-
         <div className="edit-profile-form-group">
-          <label htmlFor="location">Location</label>
+          <label htmlFor="location">City</label>
           <input
             className="edit-profile-input"
             type="text"
-            value={location}
-            name="location"
+            value={city}
+            name="city"
             maxLength="30"
           />
           <span className="edit-profile-character-count">/30</span>
         </div>
-
+        <div className="edit-profile-form-group">
+          <label htmlFor="location">Country</label>
+          <input
+            className="edit-profile-input"
+            type="text"
+            value={country}
+            name="country"
+            maxLength="30"
+          />
+          <span className="edit-profile-character-count">/30</span>
+        </div>
         <div className="edit-profile-form-group">
           <label htmlFor="website">Website</label>
           <input
