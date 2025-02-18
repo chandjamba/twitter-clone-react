@@ -49,7 +49,7 @@ export function AuthContextProvider({ children }) {
           await authService.deleteSession();
           await authService.createUserVerification();
 
-          navigate("/signin"); 
+          navigate("/signin");
         }
         if (currentUser) {
           setCurrentLoggedInUser(currentUser);
