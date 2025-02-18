@@ -1,9 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #15202b;
+  color: #ffffff;
+}
+.twitter-icon {
+  width: 40px;
+  height: 40px;
+  color: #1da1f2;
+  fill: #1da1f2;
+}
+
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: $spacing-md;
-  padding-right: $spacing-md;
+  margin: 0 auto;
 
   @include respond-to("sm") {
     max-width: map-get($breakpoints, "sm");
@@ -16,16 +36,4 @@
   @include respond-to("lg") {
     max-width: map-get($breakpoints, "lg");
   }
-}
-*,
-body,
-html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-}
-img {
-  width: 100%;
-  height: 100%;
 }

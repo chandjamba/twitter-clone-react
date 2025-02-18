@@ -5,6 +5,7 @@ import EmailVerificationPage from "./Components/EmailVerificationPage";
 import Homepage from "./Components/Homepage";
 import ProfilePage from "./Components/ProfilePage"
 import { AuthContextProvider } from "./context/AuthContext.jsx";
+import NotFoundPage from "./Components/NotFoundPage";
 import "./styles/main.scss";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/signin" element={<SignInPage />} />
+          <Route path="/notfound" element={<NotFoundPage />} />
         </Routes>
         <AuthContextProvider>
           <Routes>

@@ -1,0 +1,26 @@
+.not-found-container {
+  background-color: #192734;
+  border-radius: 15px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+.twitter-icon {
+  width: 40px;
+  height: 40px;
+  fill: #1da1f2;
+  color: #1da1f2;
+}
+.not-found-text {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #192734;
+  color: white;
+}
+@media (max-width: 480px) {
+  .not-found-text {
+    font-size: 14px;
+  }
+}
