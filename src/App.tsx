@@ -3,9 +3,10 @@ import SignUpPage from "./Components/SignUpPage";
 import SignInPage from "./Components/SignInPage";
 import EmailVerificationPage from "./Components/EmailVerificationPage";
 import Homepage from "./Components/Homepage";
-import ProfilePage from "./Components/ProfilePage"
+import ProfilePage from "./Components/ProfilePage";
 import { AuthContextProvider } from "./context/AuthContext.jsx";
 import NotFoundPage from "./Components/NotFoundPage";
+import EditProfilePage from "./Components/EditProfilePage";
 import "./styles/main.scss";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
             <Route path="/verify-email" element={<EmailVerificationPage />} />
             <Route path="/homepage" element={<Homepage />} />
             <Route path="/profile" element={<ProfilePage />} />
-
+            <Route path="/edit-profile" element={<EditProfilePage />} />
           </Routes>
         </AuthContextProvider>
       </main>

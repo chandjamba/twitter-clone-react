@@ -1,0 +1,233 @@
+.edit-profile {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  &-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e6ecf0;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+  }
+
+  &-close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+  }
+  &-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+  &-save-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: auto;
+    color: #fff;
+    background-color: #1da1f2;
+    padding: 6px 16px;
+    border-radius: 9999px;
+  }
+  &-save-button:hover {
+    background-color: #1a91da;
+  }
+  &-images {
+    position: relative;
+  }
+
+  &-banner-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &-heading {
+    font-size: 19px;
+    font-weight: bold;
+    margin: 0 0 0 20px;
+    color: black;
+    font-family: "Roboto", sans-serif;
+  }
+  &-edit-picture {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  &-banner {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  &-banner-icon,
+  &-icon {
+    fill: #fff;
+  }
+
+  &-picture {
+    position: absolute;
+    bottom: -60px;
+    left: 15px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    overflow: hidden;
+  }
+  &-image-round {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &-profile-icon {
+    fill: #fff;
+  }
+
+  &-edit-picture {
+    bottom: 0;
+    right: 0;
+    fill: #536471;
+  }
+  &-form {
+    padding: 80px 15px 15px;
+  }
+
+  &-form-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  &-form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #536471;
+    margin-bottom: 5px;
+  }
+
+  &-input {
+    width: 100%;
+    padding: 8px;
+    font-size: 15px;
+    border: 1px solid #cfd9de;
+    border-radius: 4px;
+    resize: vertical;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+  }
+  &-input:focus {
+    border-color: #1da1f2;
+  }
+
+  &-text-area {
+    width: 100%;
+    padding: 8px;
+    font-size: 15px;
+    border: 1px solid #cfd9de;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 80px;
+    resize: none;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+  }
+  &-text-area:focus {
+    border-color: #1da1f2;
+  }
+
+  &-character-count {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 13px;
+    color: #536471;
+  }
+}
+
+@media (max-width: 600px) {
+  .edit-profile {
+    width: 100%;
+  }
+
+  .profile-picture {
+    width: 90px;
+    height: 90px;
+    bottom: -45px;
+  }
+
+  .edit-profile-form {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-profile-header h1 {
+    font-size: 12px;
+  }
+
+  .save-button {
+    font-size: 14px;
+    padding: 4px 12px;
+  }
+
+  .banner-image {
+    height: 150px;
+  }
+
+  .profile-picture {
+    width: 80px;
+    height: 80px;
+    bottom: -40px;
+  }
+
+  .edit-profile-form {
+    padding-top: 50px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 14px;
+  }
+
+  .character-count {
+    font-size: 12px;
+  }
+}
