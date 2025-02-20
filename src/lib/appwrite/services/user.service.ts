@@ -2,6 +2,23 @@ import { ID, databases } from "../client";
 import { APPWRITE_CONFIG } from "../config";
 
 export  const userService = {
+    async createUser(event: any) {
+        event.preventDefault();
+        try {
+            await databases.createDocument(
+                APPWRITE_CONFIG.databaseId,
+                APPWRITE_CONFIG.usersCollectionId, 
+                ID.unique(), 
+                {
+                    name: event.target.name.value,
+                    userName: event.target.username.value,
+                    email: event.target.email.value,
+                },
+            );
+        } catch (error) {
+            console.log(error);
+        }
+    }, 
     async listUsers() {
         try {
             return await databases.listDocuments(
@@ -13,6 +30,7 @@ export  const userService = {
             console.log(error);
         }
     },
+    
     async getUser() {
         try {
             await databases.getDocument(

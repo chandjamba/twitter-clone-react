@@ -4,6 +4,7 @@ import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { validatePasswordWithRegex } from "../lib/utils/validatePasswordWithRegex";
 import { validateUserNameWithRegex } from "../lib/utils/validateUserNameWithRegex";
 import { authService } from "../lib/appwrite/services/auth.service";
+import { userService} from "../lib/appwrite/services/user.service";
 import { Link, useNavigate } from "react-router-dom";
 import { Twitter } from "lucide-react";
 
@@ -61,6 +62,8 @@ export default function SignUpPage() {
     });
     // Send an verification email asap after session created.//
     const createdEmailVerification = await authService.createUserVerification();
+    // create or save user in database. //
+    const userSaved = await userService.createUser();
     // Send an email for user verification delete the browser session. So, no any user can login without verification complete. //
     // This step is for delete signIn browser session. //
     const deleteAccountSession = await authService.deleteSession();
