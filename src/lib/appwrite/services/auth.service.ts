@@ -1,4 +1,4 @@
-import { account, ID } from "../client";
+ import { account, ID } from "../client";
 import { APPWRITE_CONFIG } from "../config";
 
 export const authService = {
