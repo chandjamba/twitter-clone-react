@@ -2,7 +2,6 @@ import "./signUpPage.scss";
 import { useState } from "react";
 import { validateEmailWithRegex } from "../lib/utils/validateEmailWithRegex";
 import { validatePasswordWithRegex } from "../lib/utils/validatePasswordWithRegex";
-import { validateUserNameWithRegex } from "../lib/utils/validateUserNameWithRegex";
 import { authService } from "../lib/appwrite/services/auth.service";
 import { userService } from "../lib/appwrite/services/user.service";
 import { Link, useNavigate } from "react-router-dom";
@@ -40,9 +39,7 @@ export default function SignUpPage() {
     // Name input validation function call. //
     const nameInputNoWhiteSpace = formDataObject.name.trim().length > 0;
     setNameError(!nameInputNoWhiteSpace);
-    // Username input validation function call. //
-    const isValidUserName = validateUserNameWithRegex(formDataObject.username);
-    setUserNameError(!isValidUserName);
+    
 
     if (!isValidEmail || !isValidPassword || !nameInputNoWhiteSpace) {
       return;
@@ -68,7 +65,6 @@ export default function SignUpPage() {
       userName: formDataObject.username,
       email: formDataObject.email,
     });
-    console.log(userSaved);
     // Send an email for user verification delete the browser session. So, no any user can login without verification complete. //
     // This step is for delete signIn browser session. //
     const deleteAccountSession = await authService.deleteSession();
@@ -95,9 +91,9 @@ export default function SignUpPage() {
               required
             />
           </div>
-          <p className="signUp-input-error">
-            {nameError ? "check your name !" : ""}
-          </p>
+          {nameError && (
+            <p className="signUp-input-error">"check your name !"</p>
+          )}
           <div className="signUp-form-group">
             <input
               className="signUp-input"
@@ -107,9 +103,9 @@ export default function SignUpPage() {
               required
             />
           </div>
-          <p className="signUp-input-error">
-            {userNameError ? "username not available !" : ""}
-          </p>
+          {userNameError && (
+            <p className="signUp-input-error">"username not available !"</p>
+          )}
           <div className="signUp-form-group">
             <input
               className="signUp-input"
@@ -119,9 +115,9 @@ export default function SignUpPage() {
               required
             />
           </div>
-          <p className="signUp-input-error">
-            {emailError ? "check your email !" : ""}
-          </p>
+          {emailError && (
+            <p className="signUp-input-error">"check your email !"</p>
+          )}
 
           <div className="signUp-form-group">
             <input
@@ -132,9 +128,9 @@ export default function SignUpPage() {
               required
             />
           </div>
-          <p className="signUp-input-error">
-            {passwordError ? "check your password !" : ""}
-          </p>
+          {passwordError && (
+            <p className="signUp-input-error">"check your password !"</p>
+          )}
 
           <button className="btn-primary" type="submit">
             Sign up
