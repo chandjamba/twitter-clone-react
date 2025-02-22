@@ -1,7 +1,10 @@
 import { MessageCircle, Repeat, Heart, Share2 } from "lucide-react";
 import "./feed.scss";
+import { userService } from "../lib/appwrite/services/user.service";
 
 export default function Feed() {
+  const loggedInUser = await userService.getUser();
+  console.log(loggedInUser);
   const tweets = [
     {
       id: 1,

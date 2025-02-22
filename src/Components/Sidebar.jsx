@@ -22,7 +22,7 @@ export default function Sidebar() {
             <Home className="item-logo" />
             <span className="menu-text">Home</span>
           </Link>
-          <Link to={"/"} className="menu-item">
+          <Link to={"/profile"} className="menu-item">
             <User className="item-logo" />
             <span className="menu-text">Profile</span>
           </Link>
