@@ -42,6 +42,12 @@
     outline: none;
     border-color: #1da1f2;
   }
+  &-input-error {
+    color: red;
+    text-align: center;
+    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+  }
   &-auth-button {
     background-color: #1da1f2;
     color: #ffffff;
