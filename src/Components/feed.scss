@@ -24,6 +24,10 @@
     padding: 20px;
     border-bottom: 1px solid #e6ecf0;
   }
+  &-form {
+    display: flex;
+    width: 100%;
+  }
 
   &-tweet-input {
     flex: 1;
