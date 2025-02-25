@@ -2,7 +2,13 @@ import { databases, ID } from "../client";
 import { APPWRITE_CONFIG } from "../config";
 
 export const tweetService = {
-  async createTweet({ tweetText }: { tweetText: string }) {
+  async createTweet({
+    tweetText,
+    userId,
+  }: {
+    tweetText: string;
+    userId: string;
+  }) {
     try {
       return await databases.createDocument(
         APPWRITE_CONFIG.databaseId,
@@ -10,6 +16,7 @@ export const tweetService = {
         ID.unique(),
         {
           tweetText,
+          users: userId,
         }
       );
     } catch (error) {

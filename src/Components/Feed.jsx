@@ -2,9 +2,11 @@ import { MessageCircle, Repeat, Heart, Share2 } from "lucide-react";
 import "./feed.scss";
 import { tweetService } from "../lib/appwrite/services/tweet.service";
 import { useEffect, useState } from "react";
+import { useAuthContext } from "../context/AuthContext";
 
 export default function Feed() {
   const [tweetList, setTweetList] = useState();
+  const { currentLoggedInUser } = useAuthContext();
 
   const tweetSubmitHandler = async (event) => {
     event.preventDefault();
@@ -19,6 +21,7 @@ export default function Feed() {
     const formDataObject = Object.fromEntries(formDataEntries);
     const createTweetText = await tweetService.createTweet({
       tweetText: formDataObject.textarea,
+      userId: currentLoggedInUser?.$id,
     });
     console.log(createTweetText);
   };

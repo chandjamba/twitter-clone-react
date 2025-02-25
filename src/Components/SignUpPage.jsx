@@ -6,6 +6,7 @@ import { authService } from "../lib/appwrite/services/auth.service";
 import { userService } from "../lib/appwrite/services/user.service";
 import { Link, useNavigate } from "react-router-dom";
 import { Twitter } from "lucide-react";
+import { useAuthContext } from "../context/AuthContext";
 
 export default function SignUpPage() {
   const navigate = useNavigate();
@@ -39,7 +40,6 @@ export default function SignUpPage() {
     // Name input validation function call. //
     const nameInputNoWhiteSpace = formDataObject.name.trim().length > 0;
     setNameError(!nameInputNoWhiteSpace);
-    
 
     if (!isValidEmail || !isValidPassword || !nameInputNoWhiteSpace) {
       return;
@@ -64,6 +64,7 @@ export default function SignUpPage() {
       name: formDataObject.name,
       userName: formDataObject.username,
       email: formDataObject.email,
+      userId: createdAccount?.$id,
     });
     // Send an email for user verification delete the browser session. So, no any user can login without verification complete. //
     // This step is for delete signIn browser session. //
