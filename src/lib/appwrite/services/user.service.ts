@@ -1,6 +1,7 @@
 import { ID, databases } from "../client";
 import { APPWRITE_CONFIG } from "../config";
 
+
 export const userService = {
   async createUser({
     name,
@@ -57,7 +58,7 @@ export const userService = {
         {}
       );
     } catch (error) {
-      console.log(error);
+      console.log(error); 
     }
   },
   async deleteUser({ userId }: { userId: string }) {

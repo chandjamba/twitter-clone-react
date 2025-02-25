@@ -12,19 +12,30 @@ import "./profilePage.scss";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { userService } from "../lib/appwrite/services/user.service";
+import { tweetService } from "../lib/appwrite/services/tweet.service";
 
 export default function ProfilePage() {
   const [userTweetsList, setUserTweetsList] = useState();
   const { userId } = useParams();
   useEffect(() => {
-    async function getCurrentUsrProfile() {
-      const currentUserProfile = await userService.getUser(userId);
-      const data = Response.documents;
+    async function getProfileUser() {
+      const resp = await userService.getUser(userId);
+      const data = resp.documents;
+      console.log(data);
+    }
+    getProfileUser();
+  }, [userId]);
+
+  useEffect(() => {
+    async function getCurrentUserTweets() {
+      const resp = await tweetService.listTweets();
+      const data = resp.documents;
       console.log(data);
       setUserTweetsList(data);
     }
-    getCurrentUsrProfile();
-  }, [userId]);
+    getCurrentUserTweets();
+  }, []);
+
   return (
     <div className="twitter-profile">
       <header className="twitter-profile-header">
@@ -107,7 +118,7 @@ export default function ProfilePage() {
       </nav>
 
       <div className="twitter-profile-tweet-list">
-        {userTweetsList.map((userTweets) => (
+        {userTweetsList?.map((userTweets) => (
           <div key={userTweets?.id} className="twitter-profile-tweet">
             <img
               src="https://picsum.photos/48"
