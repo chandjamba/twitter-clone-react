@@ -18,11 +18,11 @@ export default function Sidebar() {
           <Twitter size={30} color="#1da1f2" />
         </div>
         <nav className="sidebar-menu">
-          <Link  to={"/"} className="menu-item">
+          <Link to={"/"} className="menu-item">
             <Home className="item-logo" />
             <span className="menu-text">Home</span>
           </Link>
-          <Link to={"/profile"} className="menu-item">
+          <Link to={`/homepage/profile`} className="menu-item">
             <User className="item-logo" />
             <span className="menu-text">Profile</span>
           </Link>
