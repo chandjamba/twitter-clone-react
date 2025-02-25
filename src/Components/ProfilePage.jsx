@@ -10,15 +10,18 @@ import {
 } from "lucide-react";
 import "./profilePage.scss";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { userService } from "../lib/appwrite/services/user.service";
 
 export default function ProfilePage() {
+  const [userTweetsList, setUserTweetsList] = useState();
   const { userId } = useParams();
   useEffect(() => {
     async function getCurrentUsrProfile() {
       const currentUserProfile = await userService.getUser(userId);
-      console.log(currentUserProfile);  
+      const data = Response.documents;
+      console.log(data);
+      setUserTweetsList(data);
     }
     getCurrentUsrProfile();
   }, [userId]);
@@ -104,8 +107,8 @@ export default function ProfilePage() {
       </nav>
 
       <div className="twitter-profile-tweet-list">
-        {tweets.map((tweet) => (
-          <div key={tweet.id} className="twitter-profile-tweet">
+        {userTweetsList.map((userTweets) => (
+          <div key={userTweets?.id} className="twitter-profile-tweet">
             <img
               src="https://picsum.photos/48"
               alt="Profile"
@@ -116,22 +119,24 @@ export default function ProfilePage() {
                 <span className="twitter-profile-tweet-name">John Doe</span>
                 <span className="twitter-profile-tweet-handle">@johndoe</span>
                 <span className="twitter-profile-tweet-timestamp">
-                  {tweet.timestamp}
+                  {/* {userTweets.timestamp"} */}
                 </span>
               </div>
-              <p className="twitter-profile-tweet-text">{tweet.content}</p>
+              <p className="twitter-profile-tweet-text">
+                {"userTweets?.content"}
+              </p>
               <div className="twitter-profile-tweet-actions">
                 <button className="twitter-profile-tweet-action">
                   <MessageCircle className="twitter-profile-tweet-action-icon" />
-                  <span>{tweet.replies}</span>
+                  <span>{"userTweets?.replies"}</span>
                 </button>
                 <button className="twitter-profile-tweet-action">
                   <Repeat2 className="twitter-profile-tweet-action-icon" />
-                  <span>{tweet.retweets}</span>
+                  <span>{"userTweets?.retweets"}</span>
                 </button>
                 <button className="twitter-profile-tweet-action">
                   <Heart className="twitter-profile-tweet-action-icon" />
-                  <span>{tweet.likes}</span>
+                  <span>{"userTweets.likes"}</span>
                 </button>
                 <button className="twitter-profile-tweet-action">
                   <Upload className="twitter-profile-tweet-action-icon" />
