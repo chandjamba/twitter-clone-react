@@ -9,91 +9,19 @@ import {
   MessageCircle,
 } from "lucide-react";
 import "./profilePage.scss";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { userService } from "../lib/appwrite/services/user.service";
 
 export default function ProfilePage() {
-  const tweets = [
-    {
-      id: 1,
-      content:
-        "Just launched my new React project! Check it out at https://example.com #ReactJS #WebDev",
-      timestamp: "2h",
-      replies: 5,
-      retweets: 12,
-      likes: 28,
-    },
-    {
-      id: 2,
-      content:
-        "Excited to speak at the upcoming JavaScript conference! Who else is attending? #JSConf",
-      timestamp: "5h",
-      replies: 8,
-      retweets: 15,
-      likes: 45,
-    },
-    {
-      id: 4,
-      content:
-        "What's your favorite CSS trick? Mine is using grid for responsive layouts! #CSS #WebDesign",
-      timestamp: "1d",
-      replies: 12,
-      retweets: 7,
-      likes: 36,
-    },
-    {
-      id: 5,
-      content:
-        "Just launched my new React project! Check it out at https://example.com #ReactJS #WebDev",
-      timestamp: "2h",
-      replies: 5,
-      retweets: 12,
-      likes: 28,
-    },
-    {
-      id: 6,
-      content:
-        "Excited to speak at the upcoming JavaScript conference! Who else is attending? #JSConf",
-      timestamp: "5h",
-      replies: 8,
-      retweets: 15,
-      likes: 45,
-    },
-    {
-      id: 7,
-      content:
-        "What's your favorite CSS trick? Mine is using grid for responsive layouts! #CSS #WebDesign",
-      timestamp: "1d",
-      replies: 12,
-      retweets: 7,
-      likes: 36,
-    },
-    {
-      id: 8,
-      content:
-        "Just launched my new React project! Check it out at https://example.com #ReactJS #WebDev",
-      timestamp: "2h",
-      replies: 5,
-      retweets: 12,
-      likes: 28,
-    },
-    {
-      id: 9,
-      content:
-        "Excited to speak at the upcoming JavaScript conference! Who else is attending? #JSConf",
-      timestamp: "5h",
-      replies: 8,
-      retweets: 15,
-      likes: 45,
-    },
-    {
-      id: 10,
-      content:
-        "What's your favorite CSS trick? Mine is using grid for responsive layouts! #CSS #WebDesign",
-      timestamp: "1d",
-      replies: 12,
-      retweets: 7,
-      likes: 36,
-    },
-  ];
+  const { userId } = useParams();
+  useEffect(() => {
+    async function getCurrentUsrProfile() {
+      const currentUserProfile = await userService.getUser(userId);
+      console.log(currentUserProfile);  
+    }
+    getCurrentUsrProfile();
+  }, [userId]);
   return (
     <div className="twitter-profile">
       <header className="twitter-profile-header">

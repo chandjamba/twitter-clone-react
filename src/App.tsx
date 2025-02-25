@@ -22,8 +22,11 @@ function App() {
           <Routes>
             <Route path="/verify-email" element={<EmailVerificationPage />} />
             <Route path="/homepage" element={<Homepage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/edit-profile" element={<EditProfilePage />} />
+            <Route path="/homepage/profile/:userId" element={<ProfilePage />} />
+            <Route
+              path="/homepage/profile/:userId/edit-profile"
+              element={<EditProfilePage />}
+            />
           </Routes>
         </AuthContextProvider>
       </main>
