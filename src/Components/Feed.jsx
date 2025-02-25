@@ -1,87 +1,39 @@
 import { MessageCircle, Repeat, Heart, Share2 } from "lucide-react";
 import "./feed.scss";
+import { tweetService } from "../lib/appwrite/services/tweet.service";
+import { useEffect, useState } from "react";
+import { useAuthContext } from "../context/AuthContext";
 
 export default function Feed() {
-  const tweets = [
-    {
-      id: 1,
-      username: "John Doe",
-      handle: "@johndoe",
-      content: "Just setting up my Twitter clone! #ReactJS",
-      avatar: "https://i.pravatar.cc/48?img=1",
-    },
-    {
-      id: 2,
-      username: "Jane Smith",
-      handle: "@janesmith",
-      content:
-        "Learning React is so much fun! What's your favorite part? #WebDev",
-      avatar: "https://i.pravatar.cc/48?img=2",
-    },
-    {
-      id: 3,
-      username: "Bob Johnson",
-      handle: "@bobjohnson",
-      content:
-        "Check out this awesome Twitter clone I built with React! 🚀 #FrontEndDev",
-      avatar: "https://i.pravatar.cc/48?img=3",
-    },
-    {
-      id: 4,
-      username: "Alice Brown",
-      handle: "@alicebrown",
-      content:
-        "Any good resources for mastering CSS Grid and Flexbox? #CSSHelp",
-      avatar: "https://i.pravatar.cc/48?img=4",
-    },
-    {
-      id: 5,
-      username: "Charlie Wilson",
-      handle: "@charliewilson",
-      content:
-        "Just deployed my first React app! So excited! 😃 #WebDevelopment",
-      avatar: "https://i.pravatar.cc/48?img=5",
-    },
-    {
-      id: 6,
-      username: "John Doe",
-      handle: "@johndoe",
-      content: "Just setting up my Twitter clone! #ReactJS",
-      avatar: "https://i.pravatar.cc/48?img=1",
-    },
-    {
-      id: 7,
-      username: "Jane Smith",
-      handle: "@janesmith",
-      content:
-        "Learning React is so much fun! What's your favorite part? #WebDev",
-      avatar: "https://i.pravatar.cc/48?img=2",
-    },
-    {
-      id: 8,
-      username: "Bob Johnson",
-      handle: "@bobjohnson",
-      content:
-        "Check out this awesome Twitter clone I built with React! 🚀 #FrontEndDev",
-      avatar: "https://i.pravatar.cc/48?img=3",
-    },
-    {
-      id: 9,
-      username: "Alice Brown",
-      handle: "@alicebrown",
-      content:
-        "Any good resources for mastering CSS Grid and Flexbox? #CSSHelp",
-      avatar: "https://i.pravatar.cc/48?img=4",
-    },
-    {
-      id: 10,
-      username: "Charlie Wilson",
-      handle: "@charliewilson",
-      content:
-        "Just deployed my first React app! So excited! 😃 #WebDevelopment",
-      avatar: "https://i.pravatar.cc/48?img=5",
-    },
-  ];
+  const [tweetList, setTweetList] = useState();
+  const { currentLoggedInUser } = useAuthContext();
+
+  const tweetSubmitHandler = async (event) => {
+    event.preventDefault();
+    if (
+      !event.target.textarea.value ||
+      event.target.textarea.value.trim().length < 1
+    ) {
+      return;
+    }
+    const formData = new FormData(event.target);
+    const formDataEntries = formData.entries();
+    const formDataObject = Object.fromEntries(formDataEntries);
+    const createTweetText = await tweetService.createTweet({
+      tweetText: formDataObject.textarea,
+      userId: currentLoggedInUser?.$id,
+    });
+    console.log(createTweetText);
+  };
+  useEffect(() => {
+    async function listOfTweets() {
+      const resp = await tweetService.listTweets();
+      const listData = resp?.documents;
+      setTweetList(listData);
+      console.log(listData);
+    }
+    listOfTweets();
+  }, []);
 
   return (
     <div className="feed">
@@ -94,25 +46,32 @@ export default function Feed() {
           alt="avatar"
           className="feed-avatar"
         />
-        <div className="feed-tweet-input">
-          <textarea className="feed-textarea" placeholder="What's happening?" />
-          <button className="feed-tweet-btn">Tweet</button>
-        </div>
+        <form onSubmit={tweetSubmitHandler} className="feed-form">
+          <div className="feed-tweet-input">
+            <textarea
+              className="feed-textarea"
+              name="textarea"
+              placeholder="What's happening?"
+            />
+            <button className="feed-tweet-btn">Tweet</button>
+          </div>
+        </form>
       </div>
       <div className="feed-tweets">
-        {tweets.map((tweet) => (
-          <div key={tweet.id} className="feed-tweet">
+        {tweetList?.map((tweet) => (
+          <div key={tweet?.$id} className="feed-tweet">
             <img
-              src={tweet.avatar || "/placeholder.svg"}
+              src={"https://i.pravatar.cc/48?img=4"}
               alt="avatar"
               className="feed-avatar"
             />
             <div className="feed-tweet-content">
               <div className="feed-tweet-header">
-                <span className="feed-username">{tweet.username}</span>
-                <span className="feed-handle">{tweet.handle}</span>
+                {/* will replace hard coded value with real value from user data */}
+                <span className="feed-username">{"tweet?.username"}</span>
+                <span className="feed-handle">{"tweet?.handle"}</span>
               </div>
-              <p>{tweet.content}</p>
+              <p>{tweet?.tweetText}</p>
               <div className="feed-tweet-actions">
                 <button>
                   <MessageCircle size={18} /> Comment

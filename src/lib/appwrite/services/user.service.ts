@@ -1,4 +1,4 @@
-import { ID, databases } from "../client";
+import { databases } from "../client";
 import { APPWRITE_CONFIG } from "../config";
 
 export const userService = {
@@ -6,16 +6,18 @@ export const userService = {
     name,
     userName,
     email,
+    userId,
   }: {
     name: string;
     userName: string;
     email: string;
+    userId: string;
   }) {
     try {
       return await databases.createDocument(
         APPWRITE_CONFIG.databaseId,
         APPWRITE_CONFIG.usersCollectionId,
-        ID.unique(),
+        userId,
         {
           name,
           userName,
