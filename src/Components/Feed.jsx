@@ -12,7 +12,6 @@ export default function Feed() {
       !event.target.textarea.value ||
       event.target.textarea.value.trim().length < 1
     ) {
-      console.log("didn't run");
       return;
     }
     const formData = new FormData(event.target);
